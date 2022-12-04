@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.inputSection {
+  display: flex;
+  margin: 30px;
+}
+
+.cardSection {
+  display: flex;
+  margin: 10px 5px 0 5px;
+  overflow-y: scroll;
+  height: 80vh;
+  gap: 5vh;
+}
+.cards {
+  width: 300px;
+  height: 350px;
+  gap: 1vh;
+}
