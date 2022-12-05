@@ -10,14 +10,12 @@
 }
 
 .cardSection {
-  display: flex;
   margin: 10px 5px 0 5px;
   overflow-y: scroll;
-  height: 80vh;
-  gap: 5vh;
+  height: 88vh;
 }
-.cards {
-  width: 300px;
-  height: 350px;
-  gap: 1vh;
-}
+/* @media screen and (max-height: 1350px) {
+  .cardSection {
+    height: 75vh;
+  }
+} */

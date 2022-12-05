@@ -1,17 +1,17 @@
+* {
+  font-family: CircularSp, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl,
+    CircularSp-Grek, CircularSp-Deva, sans-serif;
+  font-weight: 700;
+}
+
 .App {
   /* width: 100vw; */
   height: 100vh;
   display: flex;
-  font-family: Montserrat, Helvetica Neue, Helvetica, Arial;
 }
 .Container {
   width: 100vw;
   height: 100vh;
   color: white;
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 56, 61, 1) 50%,
-    rgb(0, 136, 146) 100%
-  );
+ background-color: rgb(92, 92, 92);
 }

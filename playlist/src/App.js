@@ -12,7 +12,7 @@ function App() {
       <div className="App">
         <Sidebar />
         <div className="Container">
-        <Header/>
+        {/* <Header/> */}
           <Routes>
             <Route index element={<Home />} />
             <Route path="/explore" element={<Explore />} />

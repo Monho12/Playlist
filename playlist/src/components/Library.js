@@ -1,9 +1,13 @@
-import style from "../styles/Home.module.css"
+import style from "../styles/Home.module.css";
+import { Header } from "./Header";
 
 export const Library = () => {
-    return (
-        <div className={style.container}>
-            <h1>Library</h1>
-        </div>
-    )
-}
+  return (
+    <>
+      <Header />
+      <div className={style.container}>
+        <h1>Library</h1>
+      </div>
+    </>
+  );
+};

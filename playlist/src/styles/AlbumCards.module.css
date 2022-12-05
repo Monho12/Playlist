@@ -1,0 +1,28 @@
+.container {
+  padding: 20px;
+  display: flex;
+  gap: 5vh;
+}
+
+.card {
+  gap: 2vh;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  color: white;
+  flex-direction: column;
+  background-color: #181818;
+  transition: 200ms;
+}
+
+.card:hover {
+  background-color: #3a3a3a;
+  transition: 200ms;
+}
+
+.albumName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 215px;
+}
