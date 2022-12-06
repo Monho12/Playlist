@@ -3,6 +3,7 @@ import { FormControl, Button, Card, Row } from "react-bootstrap";
 import style from "../styles/Explore.module.css";
 import axios from "axios";
 import { AlbumCards } from "./AlbumCards";
+import { Songs } from "./Songs";
 
 const CLIENT_ID = "e11d642ed1f642c789a106fb51132da3";
 const CLIENT_SECRET = "e7033b13995c49bbae01be2dfb2c5134";
@@ -80,7 +81,7 @@ export const Explore = (props) => {
       });
   }
 
-  console.log(albums);
+  // console.log(albums);
 
   return (
     <div className={style.container}>
@@ -121,6 +122,7 @@ export const Explore = (props) => {
           </Row>
         </div>
       </div>
+      <Songs {...searchInput} />
     </div>
   );
 };
