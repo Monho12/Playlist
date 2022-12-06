@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  height: 100vh;
 }
 
 .inputSection {
@@ -9,10 +10,22 @@
   margin: 30px;
 }
 
+.input {
+  border-radius: 40px;
+  width: 300px;
+  border: none;
+  padding: 10px;
+  font-weight: 500;
+}
+
 .cardSection {
   margin: 10px 5px 0 5px;
-  overflow-y: scroll;
   height: 88vh;
+}
+
+.profileSection {
+  width: 400px;
+  /* border: 1px solid; */
 }
 /* @media screen and (max-height: 1350px) {
   .cardSection {

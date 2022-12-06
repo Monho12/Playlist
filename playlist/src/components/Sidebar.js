@@ -1,5 +1,5 @@
 import style from "../styles/Sidebar.module.css";
-import Logo from "../assets/Logo.png";
+import Logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 export const Sidebar = () => {
   return (

@@ -12,7 +12,8 @@ export const Explore = (props) => {
   const [searchInput, setSearchInput] = useState("");
   const [accessToken, setAccessToken] = useState("");
   const [albums, setAlbums] = useState([]);
-  const [profile, setProfile] = useState([]);
+  const [artist, setArtist] = useState([]);
+  const [pressed, setPressed] = useState(false);
   useEffect(() => {
     var authParameters = {
       method: "POST",
@@ -56,18 +57,20 @@ export const Explore = (props) => {
     console.log("Artist ID " + artistID);
 
     var Profile = await fetch(
-      "https://api.spotify.com/v1/search?q=" + searchInput + "&type=artist",
+      "https://api.spotify.com/v1/artists/" + artistID,
       searchParameters
     )
       .then((response) => response.json())
-      .then((data) => data.artists.items[0]);
-    setProfile(Profile);
+      .then((data) => {
+        setArtist(data);
+        // console.log(data);
+      });
 
     var returnedAlbums = await fetch(
       "https://api.spotify.com/v1/artists/" +
         artistID +
         "/albums" +
-        "?include_groups=album&market=US&limit=50",
+        "?include_groups=single,album&market=US&limit=50",
       searchParameters
     )
       .then((response) => response.json())
@@ -75,53 +78,49 @@ export const Explore = (props) => {
         // console.log(data);
         setAlbums(data.items);
       });
-    // console.log(Profile);
   }
 
   console.log(albums);
-  console.log(profile);
 
   return (
     <div className={style.container}>
       <div className={style.inputSection}>
-        <FormControl
-          style={{ borderTopRightRadius: "0", borderBottomRightRadius: "0" }}
-          placeholder="Search ur artist "
-          type="inpur"
+        <input
+          className={style.input}
+          placeholder="Search ur favorite artist 🔍"
+          type="input"
           onKeyPress={(event) => {
             if (event.key == "Enter") {
               search();
+              console.log(artist);
+              setPressed(true);
             }
           }}
           onChange={(event) => setSearchInput(event.target.value)}
         />
-        <Button
-          onClick={console.log("watchu doin son")}
-          style={{ borderTopLeftRadius: "0", borderBottomLeftRadius: "0" }}
-        >
-          Search
-        </Button>
       </div>
+      <div style={{ overflowY: "scroll" }}>
+        <div className={style.profileSection}>
+          {pressed && (
+            <Card>
+              {artist.images?.length > 0 && (
+                <Card.Img src={artist.images[0].url} alt="pfp" />
+              )}
+              <Card.Body>
+                <div style={{ color: "black" }}>{artist.name}</div>
+              </Card.Body>
+            </Card>
+          )}
+        </div>
 
-      <div className={style.profileSection}>
-        <Row className="mx-2 row row-cols-5">
-          <Card>
-            <Card.Img src={props.images} />
-            <Card.Body>
-              <Card style={{ color: "black" }}>{profile.name}</Card>
-            </Card.Body>
-          </Card>
-        </Row>
+        <div className={style.cardSection}>
+          <Row className="mx-2 row row-cols-6">
+            {albums.map((album, id) => {
+              return <AlbumCards album={album} key={id} />;
+            })}
+          </Row>
+        </div>
       </div>
-
-      {/* <div className={style.cardSection}>
-        <Row className="mx-2 row row-cols-6">
-          {albums.map((album, id) => {
-            console.log(album);
-            return <AlbumCards album={album} key={id} />;
-          })}
-        </Row>
-      </div> */}
     </div>
   );
 };
