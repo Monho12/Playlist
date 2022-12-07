@@ -1,6 +1,18 @@
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   height: 100vh;
+}
+
+.innerContainer {
+  /* height: 100vh; */
+  display: flex;
+  overflow-y: scroll;
+
+
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  width: 300px;
 }

@@ -1,6 +1,5 @@
 .container {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   height: 100vh;
 }
@@ -18,17 +17,26 @@
   font-weight: 500;
 }
 
+.profileSection {
+  width: fit-content;
+  padding: 25px;
+  display: flex;
+  background-color: red;
+}
+
+.img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .cardSection {
   margin: 10px 5px 0 5px;
   height: 88vh;
 }
-
-.profileSection {
-  width: 400px;
-  /* border: 1px solid; */
-}
-/* @media screen and (max-height: 1350px) {
-  .cardSection {
-    height: 75vh;
-  }
-} */

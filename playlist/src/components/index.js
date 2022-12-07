@@ -5,3 +5,4 @@ export * from "./Library";
 export * from "./Header";
 export * from "./AlbumCards";
 export * from "./Songs";
+export * from "./DataProvider";
