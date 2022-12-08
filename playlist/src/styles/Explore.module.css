@@ -18,25 +18,41 @@
 }
 
 .profileSection {
-  width: fit-content;
-  padding: 25px;
   display: flex;
-  background-color: red;
+  width: 20vw;
+  height: 20vh;
+  align-items: center;
+  background-color: #181818;
+  border-radius: 15px;
+  padding: 25px;
+  margin: 40px;
+  gap: 5%;
+}
+
+.profileSection:hover {
+  background-color: #3a3a3a;
 }
 
 .img {
   width: 100px;
-  height: 100px;
-  border-radius: 100px;
+  height: 105px;
+  border-radius: 50%;
 }
 
 .name {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 3px;
 }
 
 .cardSection {
-  margin: 10px 5px 0 5px;
   height: 88vh;
+}
+
+.typeDesign {
+  background-color: #000000;
+  border-radius: 15px;
+  padding: 8px;
+  width: fit-content;
+  font-size: 14px;
 }

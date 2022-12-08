@@ -1,14 +1,14 @@
 import { useState, useContext, useEffect } from "react";
-import { Card, Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import style from "../styles/Songs.module.css";
 import { DataContext } from "./DataProvider";
 import { useParams } from "react-router-dom";
-import { keyboard } from "@testing-library/user-event/dist/keyboard";
 
 export const Songs = (props) => {
-  const { accessToken, artistName } = useContext(DataContext);
+  const { accessToken, album } = useContext(DataContext);
 
   const [songs, setSongs] = useState([]);
+  const [poster, setPoster] = useState([]);
 
   const { id } = useParams("");
 
@@ -25,16 +25,6 @@ export const Songs = (props) => {
       },
     };
 
-    var artistID = await fetch(
-      "https://api.spotify.com/v1/search?q=" + artistName + "&type=artist",
-      searchParameters
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        return data.artists.items[0].id;
-      });
-    console.log("Artist ID " + artistID);
-
     var returnedTracks = await fetch(
       "https://api.spotify.com/v1/albums/" + `${id}` + "/tracks" + "?market=us",
       searchParameters
@@ -43,20 +33,26 @@ export const Songs = (props) => {
       .then((data) => {
         console.log("song: ", data.items);
         setSongs(data.items);
+        setPoster(album.items.images);
       });
   }
+  console.log(poster);
 
   return (
     <div className={style.container}>
       <h1>Songs list</h1>
+
+      {/* {poster.map((posters) => {
+        return (
+          posters.images?.length > 0 && <img src={posters.images[0].url} />
+        );
+      })} */}
       <div className={style.innerContainer}>
         <br />
         {songs.map((song, index) => {
           return (
             <div className={style.card} key={index}>
-              <Card.Body>
-                <Card style={{ color: "black" }}>{song.name}</Card>
-              </Card.Body>
+              <div style={{ color: "grey" }}>{song.name}</div>
             </div>
           );
         })}

@@ -33,9 +33,9 @@ export const Explore = (props) => {
               <img src={artist.images[0].url} alt="pfp" className={style.img} />
             )}
             <div className={style.name}>
-              <div style={{ color: "black" }}>{artist.name}</div>
-              <div>
-                <div style={{ color: "black" }}>{artist.type}</div>
+              <div style={{ fontSize: "30px" }}>{artist.name}</div>
+              <div className={style.typeDesign}>
+                <div>{artist.type}</div>
               </div>
             </div>
           </div>

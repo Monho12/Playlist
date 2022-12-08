@@ -13,6 +13,8 @@ export const DataProvider = (props) => {
   const [artist, setArtist] = useState([]);
   const [pressed, setPressed] = useState(false);
   const [artistName, setArtistName] = useState("");
+  const [album, setAlbum] = useState("");
+
   useEffect(() => {
     var authParameters = {
       method: "POST",
@@ -70,13 +72,14 @@ export const DataProvider = (props) => {
       "https://api.spotify.com/v1/artists/" +
         artistID +
         "/albums" +
-        "?include_groups=album&market=US&limit=50",
+        "?include_groups=album,single&market=US&limit=50",
       searchParameters
     )
       .then((response) => response.json())
       .then((data) => {
         // console.log(data);
-        console.log(data.items);
+        console.log(data);
+        setAlbum(data);
         setAlbums(data.items);
       });
   }
@@ -92,6 +95,7 @@ export const DataProvider = (props) => {
         setPressed,
         search,
         artistName,
+        album,
       }}
     >
       {props.children}
