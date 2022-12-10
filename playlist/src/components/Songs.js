@@ -1,14 +1,12 @@
 import { useState, useContext, useEffect } from "react";
-import { Card } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 import style from "../styles/Songs.module.css";
 import { DataContext } from "./DataProvider";
 import { useParams } from "react-router-dom";
 
 export const Songs = (props) => {
   const { accessToken, album } = useContext(DataContext);
-
   const [songs, setSongs] = useState([]);
-  const [poster, setPoster] = useState([]);
 
   const { id } = useParams("");
 
@@ -25,7 +23,7 @@ export const Songs = (props) => {
       },
     };
 
-    var returnedTracks = await fetch(
+    fetch(
       "https://api.spotify.com/v1/albums/" + `${id}` + "/tracks" + "?market=us",
       searchParameters
     )
@@ -33,30 +31,48 @@ export const Songs = (props) => {
       .then((data) => {
         console.log("song: ", data.items);
         setSongs(data.items);
-        setPoster(album.items.images);
+      })
+      .catch((err) => {
+        console.log(err);
       });
   }
-  console.log(poster);
 
   return (
     <div className={style.container}>
       <h1>Songs list</h1>
 
-      {/* {poster.map((posters) => {
-        return (
-          posters.images?.length > 0 && <img src={posters.images[0].url} />
-        );
-      })} */}
       <div className={style.innerContainer}>
         <br />
-        {songs.map((song, index) => {
-          return (
-            <div className={style.card} key={index}>
-              <div style={{ color: "grey" }}>{song.name}</div>
-            </div>
-          );
-        })}
+        {songs.map((song) => (
+          <Track key={song.name} {...song} />
+        ))}
       </div>
+    </div>
+  );
+};
+
+const Track = ({ name, preview_url }) => {
+  const [song, setSong] = useState(new Audio(preview_url));
+
+  const [playing, setPlaying] = useState(false);
+
+  return (
+    <div className={style.card}>
+      <div style={{ color: "grey" }}>{name}</div>
+
+      <Button
+        onClick={() => {
+          if (song.paused) {
+            song.play();
+            setPlaying(!playing);
+          } else {
+            song.pause();
+            setPlaying(playing);
+          }
+        }}
+      >
+        {playing ? "Pause" : "Play"}
+      </Button>
     </div>
   );
 };
