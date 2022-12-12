@@ -11,6 +11,13 @@
   gap: 20px;
 }
 
-.card {
-  background-color: red;
+.cardContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.trackName {
+  display: flex;
+  flex-direction: column;
 }

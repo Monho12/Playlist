@@ -33,6 +33,9 @@ export const DataProvider = (props) => {
       .then((data) => {
         setAccessToken(data.access_token);
         console.log(data.access_token);
+      })
+      .catch((err) => {
+        console.log(err);
       });
   }, []);
 
@@ -54,6 +57,9 @@ export const DataProvider = (props) => {
       .then((response) => response.json())
       .then((data) => {
         return data.artists.items[0].id;
+      })
+      .catch((err) => {
+        console.log(err);
       });
     console.log("Artist ID " + artistID);
 
@@ -66,6 +72,9 @@ export const DataProvider = (props) => {
         setArtist(data);
         setArtistName(searchInput);
         // console.log(data);
+      })
+      .catch((err) => {
+        console.log(err);
       });
 
     var returnedAlbums = await fetch(
@@ -81,7 +90,18 @@ export const DataProvider = (props) => {
         console.log(data);
         setAlbum(data);
         setAlbums(data.items);
+      })
+      .catch((err) => {
+        console.log(err);
       });
+    // var User = await fetch("https://api.spotify.com/v1/me", searchParameters)
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     console.log(data);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
   }
   return (
     <DataContext.Provider

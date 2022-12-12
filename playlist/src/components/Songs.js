@@ -1,11 +1,11 @@
 import { useState, useContext, useEffect } from "react";
-import { Button, Card } from "react-bootstrap";
 import style from "../styles/Songs.module.css";
 import { DataContext } from "./DataProvider";
 import { useParams } from "react-router-dom";
+import { Track } from "./Track";
 
-export const Songs = (props) => {
-  const { accessToken, album } = useContext(DataContext);
+export const Songs = () => {
+  const { accessToken } = useContext(DataContext);
   const [songs, setSongs] = useState([]);
 
   const { id } = useParams("");
@@ -40,39 +40,12 @@ export const Songs = (props) => {
   return (
     <div className={style.container}>
       <h1>Songs list</h1>
-
       <div className={style.innerContainer}>
         <br />
-        {songs.map((song) => (
-          <Track key={song.name} {...song} />
+        {songs.map((song, index) => (
+          <Track key={song.name} {...song} index={index} />
         ))}
       </div>
-    </div>
-  );
-};
-
-const Track = ({ name, preview_url }) => {
-  const [song, setSong] = useState(new Audio(preview_url));
-
-  const [playing, setPlaying] = useState(false);
-
-  return (
-    <div className={style.card}>
-      <div style={{ color: "grey" }}>{name}</div>
-
-      <Button
-        onClick={() => {
-          if (song.paused) {
-            song.play();
-            setPlaying(!playing);
-          } else {
-            song.pause();
-            setPlaying(playing);
-          }
-        }}
-      >
-        {playing ? "Pause" : "Play"}
-      </Button>
     </div>
   );
 };

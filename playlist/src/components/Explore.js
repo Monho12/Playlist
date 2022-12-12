@@ -1,6 +1,6 @@
 import style from "../styles/Explore.module.css";
 import { useContext, useState } from "react";
-import { Card, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { AlbumCards } from "./AlbumCards";
 import { DataContext } from "./DataProvider";
