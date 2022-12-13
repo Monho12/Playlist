@@ -39,7 +39,7 @@ export const Songs = () => {
 
   return (
     <div className={style.container}>
-      <h1>Songs list</h1>
+      <h1 style={{ padding: "40px" }}>Songs list</h1>
       <div className={style.innerContainer}>
         <br />
         {songs.map((song, index) => (

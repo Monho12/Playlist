@@ -9,10 +9,12 @@ export const Track = ({ name, preview_url, index, artists }) => {
   return (
     <>
       <div className={style.cardContainer}>
-        {index + 1}.
-        <div className={style.trackName}>
-          <div>{name}</div>
-          <div style={{ color: "grey" }}>{artists[0].name}</div>
+        <div className={style.shit}>
+          {index + 1}.
+          <div className={style.trackName}>
+            <div style={{fontWeight: "400"}}>{name}</div>
+            <div style={{ color: "grey" , fontWeight: "500" }}>{artists[0].name}</div>
+          </div>
         </div>
         <Button
           onClick={() => {

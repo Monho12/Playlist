@@ -14,7 +14,7 @@ export const Explore = (props) => {
       <div className={style.inputSection}>
         <input
           className={style.input}
-          placeholder="Search ur favorite artist 🔍"
+          placeholder="Search ur favorite artists album and singles 🔍"
           type="input"
           onKeyPress={(event) => {
             if (event.key == "Enter") {

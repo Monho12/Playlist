@@ -11,7 +11,7 @@
 
 .input {
   border-radius: 40px;
-  width: 300px;
+  width: 350px;
   border: none;
   padding: 10px;
   font-weight: 500;
@@ -19,8 +19,8 @@
 
 .profileSection {
   display: flex;
-  width: 20vw;
-  height: 20vh;
+  width: 400px;
+  height: 200px;
   align-items: center;
   background-color: #181818;
   border-radius: 15px;

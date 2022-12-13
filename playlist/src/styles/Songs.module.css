@@ -1,11 +1,11 @@
 .container {
   flex-direction: column;
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 .innerContainer {
   display: flex;
-  height: 93vh;
+  height: 85vh;
   overflow-y: scroll;
   flex-direction: column;
   gap: 20px;
@@ -13,8 +13,18 @@
 
 .cardContainer {
   display: flex;
+  gap: 20px;
   justify-content: space-between;
   align-items: center;
+  padding: 10px;
+  padding-right: 40px;
+}
+
+.shit {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-weight: 300;
 }
 
 .trackName {

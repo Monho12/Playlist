@@ -1,5 +1,6 @@
 import style from "../styles/Home.module.css";
 import { Header } from "./Header";
+import { IframeHTMLAttributes } from "react";
 
 export const Home = () => {
   return (
