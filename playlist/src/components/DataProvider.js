@@ -14,7 +14,6 @@ export const DataProvider = (props) => {
   const [pressed, setPressed] = useState(false);
   const [artistName, setArtistName] = useState("");
   const [album, setAlbum] = useState("");
-  const [playlist, setPlaylist] = useState([]);
 
   useEffect(() => {
     var authParameters = {
@@ -91,19 +90,6 @@ export const DataProvider = (props) => {
         console.log(data);
         setAlbum(data);
         setAlbums(data.items);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    var User = await fetch(
-      "https://api.spotify.com/v1/me/playlists",
-      searchParameters
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        // console.log(data);
-        setPlaylist(data);
-        console.log(playlist);
       })
       .catch((err) => {
         console.log(err);
