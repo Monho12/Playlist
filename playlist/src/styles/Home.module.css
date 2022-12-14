@@ -1,6 +1,50 @@
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* height: 90vh; */
+  display: flex;
+  flex-direction: column;
+}
+
+.innerContainer {
+  padding: 30px 50px 30px 50px;
+  overflow-y: scroll;
+  height: 94vh;
+  /* border: 1px solid; */
+}
+
+.imgCont {
+  position: relative;
+  display: flex;
+  /* border: 1px solid; */
+}
+
+.img {
+  width: 80vw;
+  margin-left: 10px;
+}
+
+.name {
+  position: absolute;
+  top: 20vh;
+  right: 30vw;
+  margin-top: 0;
+  font-weight: 700;
+  font-size: 36px;
+}
+.button {
+  position: absolute;
+  bottom: 100px;
+  right: 35vw;
+  border-radius: 40px;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0.14em;
+  color: #171717;
+  width: 232px;
+  height: 62px;
+}
+.button:hover {
+  background-color: #60f11d;
 }

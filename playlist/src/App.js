@@ -7,6 +7,7 @@ import {
   Sidebar,
   Songs,
   DataProvider,
+  About,
 } from "./components";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
                 <Route path=":id" element={<Songs />} />
               </Route>
               <Route path="/library" element={<Library />} />
+              <Route path="/about" element={<About />} />
             </Routes>
           </div>
         </div>

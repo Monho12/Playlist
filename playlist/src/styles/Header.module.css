@@ -1,4 +1,26 @@
 .header {
-    height: 8vh;
-    background-color: rgb(40, 202, 49);
+  height: 6vh;
+  background-color: #6096ba9c;
+}
+.btns {
+  display: flex;
+  justify-content: end;
+  height: 6vh;
+  gap: 5px;
+  align-items: center;
+  /* border: 1px solid; */
+}
+.button {
+  margin-right: 10px;
+  border-radius: 40px;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: #171717;
+  width: 100px;
+  height: 30px;
 }

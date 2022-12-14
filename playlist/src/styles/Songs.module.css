@@ -20,7 +20,7 @@
   padding-right: 40px;
 }
 
-.shit {
+.leftSection {
   display: flex;
   gap: 20px;
   align-items: center;
@@ -30,4 +30,9 @@
 .trackName {
   display: flex;
   flex-direction: column;
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
 }

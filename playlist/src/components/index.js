@@ -7,3 +7,4 @@ export * from "./AlbumCards";
 export * from "./Songs";
 export * from "./DataProvider";
 export * from "./Track";
+export * from "./About";

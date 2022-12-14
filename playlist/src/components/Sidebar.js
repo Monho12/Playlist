@@ -6,7 +6,7 @@ export const Sidebar = () => {
     <div className={style.sidebar}>
       <Link to="/">
         <div style={{ padding: "25px" }}>
-          <img src={Logo} style={{ width: "200px" }} />
+          <img src={Logo} style={{ width: "200px" }} draggable="false" />
         </div>
       </Link>
       <div className={style.sections}>
@@ -18,6 +18,9 @@ export const Sidebar = () => {
         </Link>
         <Link to="/library" style={{ textDecoration: "none", color: "wheat" }}>
           Library
+        </Link>
+        <Link to="/about" style={{ textDecoration: "none", color: "wheat" }}>
+          About us
         </Link>
       </div>
     </div>
