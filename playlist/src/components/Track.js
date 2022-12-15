@@ -19,6 +19,15 @@ export const Track = ({ name, preview_url, index, artists, duration_ms }) => {
     msToTime();
   });
 
+  const Player = () => {
+    setPlaying(!playing);
+    if (music.paused) {
+      music.play();
+    } else {
+      music.pause();
+    }
+  };
+
   return (
     <>
       <div className={style.cardContainer}>
@@ -34,18 +43,7 @@ export const Track = ({ name, preview_url, index, artists, duration_ms }) => {
         </div>
         <div className={style.rightSection}>
           <div style={{ marginRight: "300px" }}>{msToTime(duration_ms)}</div>
-          <Button
-            onClick={() => {
-              setPlaying(!playing);
-              if (music.paused) {
-                music.play();
-              } else if (playing) {
-                music.pause();
-              }
-            }}
-          >
-            {playing ? "Pause" : "Play"}
-          </Button>
+          <Button onClick={Player}>{playing ? "Pause" : "Play"}</Button>
         </div>
       </div>
     </>

@@ -8,7 +8,7 @@ export const About = () => {
       <Header />
       <div className={style.container}>
         <div className={style.aboutContainer}>
-          <img src={img} />
+          <img src={img} className={style.img} />
           <div className={style.info}>
             Hi im developer of this site. You can call me "GUSTAVO". We're hirin
             UI & UX Designer. We need graphic designers. Also we need ps5's ,
@@ -44,7 +44,7 @@ export const About = () => {
             Several Devices. Curated Playlists. Discover Great New Music.
           </div>
 
-          <div className={style.info2}>
+          <div className={style.info}>
             Owner of notSpotify is Mnholovesnobody
           </div>
         </div>

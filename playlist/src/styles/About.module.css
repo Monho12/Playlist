@@ -5,19 +5,14 @@
   position: relative;
 }
 
+.img {
+  width: 75vw;
+}
+
 .info {
   margin: 50px 0 0 0;
   font-weight: 700;
   font-size: 24px;
-  width: 72vw;
+  width: 75vw;
   color: bisque;
-}
-.info2 {
-  margin: 50px 0 0 0;
-  position: absolute;
-  right: 150px;
-  font-weight: 700;
-  font-size: 24px;
-  width: fit-content;
-  color: white;
 }

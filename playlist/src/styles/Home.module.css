@@ -28,6 +28,22 @@
   margin-top: 0;
   font-weight: 700;
   font-size: 36px;
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    color: #2a9d8f;
+  }
+  25% {
+    color: #36cbba;
+  }
+  50% {
+    color: #3cedd9;
+  }
+  100% {
+    color: #2a9d8f;
+  }
 }
 .button {
   position: absolute;
@@ -46,5 +62,5 @@
   height: 62px;
 }
 .button:hover {
-  background-color: #60f11d;
+  background-color: rgb(242, 221, 58);
 }

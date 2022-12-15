@@ -38,7 +38,7 @@ export const Songs = () => {
   }
 
   return (
-    <div className={style.container}>
+    <div>
       <h1 style={{ padding: "40px" }}>Songs list</h1>
       <div className={style.innerContainer}>
         <br />

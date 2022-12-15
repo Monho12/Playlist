@@ -8,3 +8,4 @@ export * from "./Songs";
 export * from "./DataProvider";
 export * from "./Track";
 export * from "./About";
+export * from "./Playlist";

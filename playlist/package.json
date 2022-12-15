@@ -1,7 +1,6 @@
 {
   "name": "playlist",
   "version": "0.1.0",
-  "proxy": "http://localhost:8000/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -9,6 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.0",
     "bootstrap": "^5.2.3",
+    "cors": "^2.8.5",
     "fetch": "^1.1.0",
     "node-fetch": "^3.3.0",
     "rapidapi": "^2.0.3",
