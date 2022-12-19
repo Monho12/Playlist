@@ -1,42 +1,31 @@
 const express = require("express");
-const app = express();
 const cors = require("cors");
+const { body, validationResult } = require("express-validator");
+const app = express();
+
+let data = [];
 app.use(cors());
 
-const playList = [
-  {
-    artistName: "Joji",
-    songName: "Glimpse of Us",
-    songId: "1",
-    songGenre: "R&B / Soul",
-    songLink: "",
-  },
-  {
-    artistName: "Joji",
-    songName: "Feeling Like The End",
-    songId: "2",
-    songGenre: "R&B / Soul",
-    songLink: "",
-  },
-  {
-    artistName: "Joji",
-    songName: "Die For You",
-    songId: "3",
-    songGenre: "R&B / Soul",
-    songLink:
-      "https://beta.linkjuicepro.com/dl?hash=8XEX4ixR0S0VNzHL9rY1ri9cAuWE1CPOv4ZkW%2BqonKkg7vCY1QSyxNB5kcm1rKzELsrBHWIEJ01aGv2lTFtIuxxEf8b%2BY4mp4ew84PEfuLQPr79%2FNYUDCMqrIAD000aJ1a13iOyhj3zJ1pepTv5EVFKRMtDS8druGPhYvJN0qJEPEyQDY3ib7zj%2FmJnUySwkUNS6pRC8wXlHPC5XuWh2MA%3D%3D",
-  },
-  {
-    artistName: "Joji",
-    songName: "Before The Day Is Over",
-    songId: "4",
-    songGenre: "R&B / Soul",
-    songLink: "",
-  },
-];
+app.use(express.json());
+app.post(
+  "/playlist",
+  [body("playlist").isString(), body("id").isString()],
+  cors(),
+  (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(422).json({ errors: errors.array() });
+    }
+
+    const body = req.body;
+    console.log(body);
+    res.send("amjilttai");
+    data.push(req.body);
+  }
+);
 
 app.get("/playlist", (req, res) => {
-  res.send(playList);
+  res.send(data);
 });
 
-app.listen(8000);
+app.listen(5000);

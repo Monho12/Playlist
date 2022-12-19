@@ -1,4 +1,6 @@
 import { useState, useEffect, createContext } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
 const CLIENT_ID = "e11d642ed1f642c789a106fb51132da3";
 const CLIENT_SECRET = "e7033b13995c49bbae01be2dfb2c5134";
@@ -14,6 +16,7 @@ export const DataProvider = (props) => {
   const [pressed, setPressed] = useState(false);
   const [artistName, setArtistName] = useState("");
   const [album, setAlbum] = useState("");
+  const [list, setList] = useState([]);
 
   useEffect(() => {
     var authParameters = {
@@ -37,6 +40,14 @@ export const DataProvider = (props) => {
       .catch((err) => {
         console.log(err);
       });
+
+    {
+      (async () => {
+        const res = await axios.get("http://localhost:5000/playlist");
+        console.log(res.data);
+        setList(res.data);
+      })();
+    }
   }, []);
 
   async function search() {
@@ -108,6 +119,7 @@ export const DataProvider = (props) => {
         search,
         artistName,
         album,
+        list,
       }}
     >
       {props.children}

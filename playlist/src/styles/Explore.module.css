@@ -19,7 +19,7 @@
 
 .profileSection {
   display: flex;
-  width: 400px;
+  width: 425px;
   height: 200px;
   align-items: center;
   background-color: #181818;
@@ -34,8 +34,8 @@
 }
 
 .img {
-  width: 100px;
-  height: 105px;
+  width: 135px;
+  height: 140px;
   border-radius: 50%;
 }
 

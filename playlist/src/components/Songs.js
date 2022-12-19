@@ -7,7 +7,6 @@ import { Track } from "./Track";
 export const Songs = () => {
   const { accessToken } = useContext(DataContext);
   const [songs, setSongs] = useState([]);
-
   const { id } = useParams("");
 
   useEffect(() => {

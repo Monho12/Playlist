@@ -1,8 +1,24 @@
 .sidebar {
   background-color: #00171f;
+  overflow: scroll;
+  height: 100vh;
 }
 
 .sections {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  gap: 3vh;
+  padding: 25px;
+}
+
+.line {
+  width: 80%;
+  margin: 15px 10px 0 20px;
+  border: 1px solid grey;
+}
+
+.playlistSection {
   display: flex;
   flex-direction: column;
   width: fit-content;

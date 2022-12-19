@@ -1,29 +1,14 @@
-import { Card, Button } from "react-bootstrap";
-import { useState } from "react";
+import style from "../styles/AlbumCards.module.css";
 
-export const Playlist = ({ songName, songLink }) => {
-  const [music] = useState(new Audio(songLink));
-  const [playing, setPlaying] = useState(false);
+export const Playlist = ({ playlist, index }) => {
   return (
-    <>
-      <Card>
-        <Card.Img />
-        <Card.Body>
-          <h1 style={{ color: "black" }}>{songName}</h1>;
-        </Card.Body>
-      </Card>
-      <Button
-        onClick={() => {
-          setPlaying(!playing);
-          if (music.paused) {
-            music.play();
-          } else if (playing) {
-            music.pause();
-          }
-        }}
-      >
-        {playing ? "Pause" : "Play"}
-      </Button>
-    </>
+    <div className={style.container}>
+      <div className={style.card}>
+        <div className={style.playlistName}>
+          <div>{index + 1}.</div>
+          <div>{playlist}</div>
+        </div>
+      </div>
+    </div>
   );
 };
