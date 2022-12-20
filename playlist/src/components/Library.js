@@ -3,14 +3,15 @@ import { useContext } from "react";
 import style from "../styles/Library.module.css";
 import { Header } from "./Header";
 import { Playlist } from "./Playlist";
+import { CreatePlaylist } from "./CreatePlaylist";
 
 export const Library = () => {
-  const { list } = useContext(DataContext);
+  const { list, create } = useContext(DataContext);
 
   return (
     <>
       <Header />
-      <div className={style.container}>
+      <div className={create ? style.container : ""}>
         <h1>Library</h1>
         <div className={style.cardSection}>
           {list.map((item, index) => {

@@ -17,6 +17,7 @@ export const DataProvider = (props) => {
   const [artistName, setArtistName] = useState("");
   const [album, setAlbum] = useState("");
   const [list, setList] = useState([]);
+  const [create, SetCreate] = useState(false);
 
   useEffect(() => {
     var authParameters = {
@@ -120,6 +121,8 @@ export const DataProvider = (props) => {
         artistName,
         album,
         list,
+        create,
+        SetCreate,
       }}
     >
       {props.children}

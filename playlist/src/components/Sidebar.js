@@ -5,7 +5,7 @@ import { DataContext } from "./DataProvider";
 import { useContext } from "react";
 import { Playlist } from "./Playlist";
 export const Sidebar = () => {
-  const { list } = useContext(DataContext);
+  const { list, create, setCreate } = useContext(DataContext);
   return (
     <div className={style.sidebar}>
       <Link to="/">
@@ -37,7 +37,12 @@ export const Sidebar = () => {
           </Link>
         </div>
         <div>
-          <Link style={{ textDecoration: "none", color: "wheat" }}>
+          <Link
+            style={{ textDecoration: "none", color: "wheat" }}
+            onClick={() => {
+              setCreate(true);
+            }}
+          >
             Create Playlist
           </Link>
         </div>
