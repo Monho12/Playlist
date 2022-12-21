@@ -7,7 +7,7 @@ export const Header = () => {
         <button className={style.button}>Sign up</button>
         <button
           className={style.button}
-          style={{ backgroundColor: "black", color: "white" }}
+          style={{ backgroundColor: "#00a896", color: "white" }}
         >
           Log in
         </button>

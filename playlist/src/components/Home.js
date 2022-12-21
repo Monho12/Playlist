@@ -8,20 +8,18 @@ export const Home = () => {
       <Header />
       <div className={style.container}>
         <div className={style.innerContainer}>
-          <div className={style.imgCont}>
-            <img
-              src={img}
-              alt="backgroundIMG"
-              className={style.img}
-              draggable="false"
-            />
-            <div className={style.name}>Welcome to notSpotify</div>
-            <Link to="/explore">
-              <button className={style.button} to="/explore">
-                Start Listen
-              </button>
-            </Link>
-          </div>
+          <img
+            src={img}
+            alt="backgroundIMG"
+            className={style.img}
+            draggable="false"
+          />
+          <div className={style.name}>Welcome to notSpotify</div>
+          <Link to="/explore">
+            <button className={style.button} to="/explore">
+              Start Listen
+            </button>
+          </Link>
         </div>
       </div>
     </>

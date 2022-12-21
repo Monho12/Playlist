@@ -1,8 +1,12 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
 .aboutContainer {
-  padding: 30px 50px 30px 130px;
+  padding: 20px;
   overflow-y: scroll;
   height: 94vh;
-  position: relative;
 }
 
 .img {

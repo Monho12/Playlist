@@ -8,6 +8,7 @@ import {
   Songs,
   DataProvider,
   About,
+  CreatePlaylist,
 } from "./components";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
               <Route path="/about" element={<About />} />
             </Routes>
           </div>
+          <CreatePlaylist />
         </div>
       </BrowserRouter>
     </DataProvider>

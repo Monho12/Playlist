@@ -2,10 +2,10 @@ import style from "../styles/Sidebar.module.css";
 import Logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 import { DataContext } from "./DataProvider";
-import { useContext } from "react";
-import { Playlist } from "./Playlist";
+import { useContext, useEffect, useState } from "react";
 export const Sidebar = () => {
   const { list, create, setCreate } = useContext(DataContext);
+  console.log(create);
   return (
     <div className={style.sidebar}>
       <Link to="/">
@@ -39,9 +39,7 @@ export const Sidebar = () => {
         <div>
           <Link
             style={{ textDecoration: "none", color: "wheat" }}
-            onClick={() => {
-              setCreate(true);
-            }}
+            onClick={() => setCreate(!create)}
           >
             Create Playlist
           </Link>

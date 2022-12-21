@@ -1,29 +1,22 @@
 .container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
 }
 
 .innerContainer {
-  padding: 30px 50px 30px 50px;
-  overflow-y: scroll;
-  height: 94vh;
-  /* border: 1px solid; */
-}
+  padding: 20px;
 
-.imgCont {
   position: relative;
-  display: flex;
   /* border: 1px solid; */
 }
 
 .img {
-  width: 80vw;
-  margin-left: 10px;
+  width: 75vw;
 }
 
 .name {
   position: absolute;
-  top: 20vh;
+  top: 30vh;
   right: 30vw;
   margin-top: 0;
   font-weight: 700;

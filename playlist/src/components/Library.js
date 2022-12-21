@@ -6,12 +6,12 @@ import { Playlist } from "./Playlist";
 import { CreatePlaylist } from "./CreatePlaylist";
 
 export const Library = () => {
-  const { list, create } = useContext(DataContext);
+  const { list } = useContext(DataContext);
 
   return (
     <>
       <Header />
-      <div className={create ? style.container : ""}>
+      <div>
         <h1>Library</h1>
         <div className={style.cardSection}>
           {list.map((item, index) => {

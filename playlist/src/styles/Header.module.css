@@ -1,11 +1,11 @@
 .header {
-  height: 6vh;
-  background-color: #6096ba9c;
+  height: 60px;
+  background-color: #656d4a;
 }
 .btns {
   display: flex;
   justify-content: end;
-  height: 6vh;
+  height: 60px;
   gap: 5px;
   align-items: center;
   /* border: 1px solid; */

@@ -7,22 +7,17 @@ let data = [];
 app.use(cors());
 
 app.use(express.json());
-app.post(
-  "/playlist",
-  [body("playlist").isString(), body("id").isString()],
-  cors(),
-  (req, res) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(422).json({ errors: errors.array() });
-    }
-
-    const body = req.body;
-    console.log(body);
-    res.send("amjilttai");
-    data.push(req.body);
+app.post("/playlist", [body("playlist").isString()], cors(), (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(422).json({ errors: errors.array() });
   }
-);
+
+  const body = req.body;
+  console.log(body);
+  res.send("amjilttai");
+  data.push(req.body);
+});
 
 app.get("/playlist", (req, res) => {
   res.send(data);
