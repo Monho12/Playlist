@@ -6,10 +6,10 @@ export const Header = () => {
       <div className={style.btns}>
         <div className={style.news}>
           <div className={style.inner}>
-            Happy Holidays. Thanks for using notSpotify®. Happy Holidays. Thanks
-            for using notSpotify®. Happy Holidays. Thanks for using notSpotify®.
-            Happy Holidays. Thanks for using notSpotify® Happy Holidays. Thanks
-            for using notSpotify®. Happy Holidays. Thanks for using notSpotify®.
+            Happy Holidays. Thanks for listening notSpotify®. Happy Holidays. Thanks
+            for listening notSpotify®. Happy Holidays. Thanks for listening notSpotify®.
+            Happy Holidays. Thanks for listening notSpotify® Happy Holidays. Thanks
+            for listening notSpotify®. Happy Holidays. Thanks for listening notSpotify®.
           </div>
         </div>
         <button

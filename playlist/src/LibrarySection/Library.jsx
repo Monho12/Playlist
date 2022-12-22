@@ -10,13 +10,15 @@ export const Library = () => {
 
   return (
     <div className={style.container}>
-      <h1>My Playlists</h1>
+      <div className={style.part}>
+        <h1>My Playlists</h1>
+      </div>
       <div className={style.cardSection}>
         <Row className="mx-2 row row-cols-6">
           {list.map((item, index) => {
             return (
               <Link style={{ textDecoration: "none" }}>
-                <Playlist {...item} index={index} />
+                <Playlist {...item} index={index} key={index} />
               </Link>
             );
           })}

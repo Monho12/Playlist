@@ -2,6 +2,7 @@
   height: 60px;
   /* background-color: #656d4a; */
   background-color: #da2c38;
+  display: flex;
 }
 .btns {
   display: flex;
