@@ -50,4 +50,10 @@ app.post("/playlists", async (req, res) => {
   res.send("successfully created");
 });
 
+app.delete("/playlists/:id", async (req, res) => {
+  const id = req.params.id;
+  await Playlist.findByIdAndDelete(id);
+  res.send("deleted");
+});
+
 app.listen(5000);

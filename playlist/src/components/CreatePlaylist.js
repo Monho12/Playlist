@@ -26,6 +26,8 @@ export const CreatePlaylist = () => {
   const setValue = () => {
     setPlaylistName(name.current.value);
     console.log(name.current.value);
+    alert("created u fuck");
+    window.onload();
   };
 
   return (
