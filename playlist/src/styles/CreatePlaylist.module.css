@@ -1,13 +1,13 @@
 .container {
   width: 500px;
-  height: 420px;
-  background-color: #4cc9f0;
+  height: 230px;
+  background-color: #43291f;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: fixed;
   z-index: 11;
-  top: 20%;
+  top: 30%;
   left: 40%;
   padding: 20px;
   gap: 25px;
@@ -17,14 +17,34 @@
   display: none;
 }
 
-Button {
+.button {
+  border-radius: 40px;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0.14em;
+  background-color: #bc4749;
+  color: wheat;
   width: 150px;
+  height: 40px;
+  margin-top: 10px;
+  transition: 300ms;
 }
-
 .input {
   border-radius: 40px;
   width: 350px;
   border: none;
   padding: 10px;
   font-weight: 500;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  cursor: pointer;
+  color: white;
 }

@@ -13,7 +13,7 @@ export const CreatePlaylist = () => {
   useEffect(() => {
     if (playlistName != null) {
       axios
-        .post(baseUrl + "/playlist", { playlist: playlistName })
+        .post(baseUrl + "/playlists", { playlist: playlistName })
         .then((res) => {
           console.log(res.data);
         })
@@ -34,17 +34,23 @@ export const CreatePlaylist = () => {
         create ? style.container : `${style.container}  ${style.displayNone}`
       }
     >
-      <button onClick={() => setCreate(!create)}>X</button>
+      <div onClick={() => setCreate(!create)} className={style.close}>
+        ❌
+      </div>
 
-      <div style={{ color: "wheat" }}>Creating playlist section</div>
+      <div style={{ color: "wheat", fontSize: "28px" }}>
+        Create your holiday playlist
+      </div>
 
       <input
-        placeholder="Enter ur playlist name"
+        placeholder="Enter your playlist name"
         ref={name}
         className={style.input}
       />
 
-      <Button onClick={setValue}>Create</Button>
+      <button onClick={setValue} className={style.button}>
+        Create
+      </button>
     </div>
   );
 };

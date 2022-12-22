@@ -44,7 +44,7 @@ export const DataProvider = (props) => {
 
     {
       (async () => {
-        const res = await axios.get("http://localhost:5000/playlist");
+        const res = await axios.get("http://localhost:5000/playlists");
         console.log(res.data);
         setList(res.data);
       })();

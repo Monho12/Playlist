@@ -50,12 +50,15 @@
   line-height: 23px;
   text-align: center;
   letter-spacing: 0.14em;
-  color: #171717;
+
+  background-color: #bc4749;
+  color: wheat;
   width: 232px;
   height: 62px;
+  transition: 300ms;
 }
 .button:hover {
   /* background-color: rgb(242, 221, 58); */
-  background-color: #bc4749;
+  background-color: #ee6c6e;
   color: wheat;
 }
