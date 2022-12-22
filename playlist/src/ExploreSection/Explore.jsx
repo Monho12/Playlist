@@ -1,10 +1,9 @@
-import style from "../styles/Explore.module.css";
-import { useContext, useState } from "react";
-import { Row, Spinner } from "react-bootstrap";
+import style from "./Explore.module.css";
+import { useContext } from "react";
+import { Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { AlbumCards } from "./AlbumCards";
-import { DataContext } from "./DataProvider";
-import { Header } from "./Header";
+import { DataContext } from "../components/DataProvider";
 
 export const Explore = (props) => {
   const { albums, artist, pressed, search, setSearchInput, setPressed } =
@@ -12,7 +11,6 @@ export const Explore = (props) => {
 
   return (
     <div className={style.container}>
-      <Header />
       <div className={style.inputSection}>
         <input
           className={style.input}

@@ -1,12 +1,12 @@
 import { DataContext } from "./DataProvider";
 import { useContext, useEffect, useRef, useState } from "react";
-import { Button } from "react-bootstrap";
 import style from "../styles/CreatePlaylist.module.css";
 import axios from "axios";
 
 export const CreatePlaylist = () => {
   const { create, setCreate } = useContext(DataContext);
   const [playlistName, setPlaylistName] = useState();
+
   let name = useRef();
   const baseUrl = "http://localhost:5000";
 
@@ -26,8 +26,7 @@ export const CreatePlaylist = () => {
   const setValue = () => {
     setPlaylistName(name.current.value);
     console.log(name.current.value);
-    alert("created u fuck");
-    window.onload();
+    window.location.reload();
   };
 
   return (
@@ -48,6 +47,12 @@ export const CreatePlaylist = () => {
         placeholder="Enter your playlist name"
         ref={name}
         className={style.input}
+        onKeyPress={(event) => {
+          if (event.key == "Enter") {
+            setValue();
+            setCreate(!create);
+          }
+        }}
       />
 
       <button onClick={setValue} className={style.button}>

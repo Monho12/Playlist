@@ -1,15 +1,17 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import {
-  Explore,
-  Home,
-  Library,
   Sidebar,
   Songs,
   DataProvider,
-  About,
   CreatePlaylist,
+  Header,
 } from "./components";
+import { Home } from "./HomeSection/Home";
+import { Explore } from "./ExploreSection";
+import { About } from "./AboutSection/About";
+import { Library } from "./LibrarySection/Library";
+import { Tracks } from "./LibrarySection/Tracks";
 
 function App() {
   return (
@@ -18,7 +20,7 @@ function App() {
         <div className="App">
           <Sidebar />
           <div className="Container">
-            {/* <Header/> */}
+            <Header />
             <Routes>
               <Route index element={<Home />} />
               <Route path="/explore" element={<Explore />} />
@@ -27,6 +29,9 @@ function App() {
               </Route>
               <Route path="/library" element={<Library />} />
               <Route path="/about" element={<About />} />
+              <Route path="/playlists">
+                <Route path=":id" element={<Tracks />} />
+              </Route>
             </Routes>
           </div>
           <CreatePlaylist />

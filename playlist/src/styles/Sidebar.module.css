@@ -26,4 +26,20 @@
   width: fit-content;
   gap: 3vh;
   padding: 25px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 200px;
 }
+
+.innerSection {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.img {
+  width: 16px;
+  height: 16px;
+}
+

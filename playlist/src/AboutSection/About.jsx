@@ -1,11 +1,9 @@
-import style from "../styles/About.module.css";
-import { Header } from "./Header";
+import style from "./About.module.css";
 import img from "../assets/us.png";
 
 export const About = () => {
   return (
     <>
-      <Header />
       <div className={style.container}>
         <div className={style.container}>
           <div className={style.aboutContainer}>

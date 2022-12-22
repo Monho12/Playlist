@@ -1,11 +1,9 @@
-import style from "../styles/Home.module.css";
-import { Header } from "./Header";
+import style from "./Home.module.css";
 import img from "../assets/Holiday.png";
 import { Link } from "react-router-dom";
 export const Home = () => {
   return (
     <>
-      <Header />
       <div className={style.container}>
         <div className={style.innerContainer}>
           <img

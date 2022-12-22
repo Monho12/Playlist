@@ -4,6 +4,14 @@ export const Header = () => {
   return (
     <div className={style.header}>
       <div className={style.btns}>
+        <div className={style.news}>
+          <div className={style.inner}>
+            Happy Holidays. Thanks for using notSpotify®. Happy Holidays. Thanks
+            for using notSpotify®. Happy Holidays. Thanks for using notSpotify®.
+            Happy Holidays. Thanks for using notSpotify® Happy Holidays. Thanks
+            for using notSpotify®. Happy Holidays. Thanks for using notSpotify®.
+          </div>
+        </div>
         <button
           className={style.button}
           style={{ backgroundColor: "#f4f0bb", color: "black" }}

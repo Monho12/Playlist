@@ -1,0 +1,29 @@
+.container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+  position: relative;
+}
+
+.card {
+  gap: 2vh;
+  border-radius: 10px;
+  padding: 15px;
+  color: red;
+  height: 120px;
+  width: 200px;
+  background-color: white;
+  transition: 200ms;
+}
+
+.playlistName {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 5%;
+  width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
