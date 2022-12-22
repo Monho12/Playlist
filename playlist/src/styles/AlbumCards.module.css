@@ -9,14 +9,14 @@
   border-radius: 10px;
   padding: 15px;
   display: flex;
-  color: white;
+  color: red;
   flex-direction: column;
-  background-color: #181818;
+  background-color: white;
   transition: 200ms;
 }
 
 .card:hover {
-  background-color: #3a3a3a;
+  background-color: wheat;
   transition: 200ms;
 }
 
@@ -26,8 +26,6 @@
   white-space: nowrap;
   width: 200px;
 }
-
-
 
 .playlistName {
   display: flex;

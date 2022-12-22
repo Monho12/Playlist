@@ -4,10 +4,15 @@ export const Header = () => {
   return (
     <div className={style.header}>
       <div className={style.btns}>
-        <button className={style.button}>Sign up</button>
         <button
           className={style.button}
-          style={{ backgroundColor: "#00a896", color: "white" }}
+          style={{ backgroundColor: "#f4f0bb", color: "black" }}
+        >
+          Sign up
+        </button>
+        <button
+          className={style.button}
+          style={{ backgroundColor: "#226f54", color: "white" }}
         >
           Log in
         </button>

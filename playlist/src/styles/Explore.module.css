@@ -22,7 +22,8 @@
   width: 425px;
   height: 200px;
   align-items: center;
-  background-color: #181818;
+  background-color: white;
+  color: black;
   border-radius: 15px;
   padding: 25px;
   margin: 40px;
@@ -30,12 +31,12 @@
 }
 
 .profileSection:hover {
-  background-color: #3a3a3a;
+  background-color: wheat;
 }
 
 .img {
   width: 135px;
-  height: 140px;
+  height: 145px;
   border-radius: 50%;
 }
 
@@ -50,8 +51,9 @@
 }
 
 .typeDesign {
-  background-color: #000000;
+  background-color: green;
   border-radius: 15px;
+  color: white;
   padding: 8px;
   width: fit-content;
   font-size: 14px;

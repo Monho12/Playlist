@@ -1,5 +1,6 @@
 .sidebar {
-  background-color: #333d29;
+  /* background-color: #333d29; */
+  background-color: #43291f;
   height: 100vh;
   width: 300px;
   overflow-y: scroll;

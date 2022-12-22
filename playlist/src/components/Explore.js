@@ -1,9 +1,10 @@
 import style from "../styles/Explore.module.css";
 import { useContext, useState } from "react";
-import { Row } from "react-bootstrap";
+import { Row, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { AlbumCards } from "./AlbumCards";
 import { DataContext } from "./DataProvider";
+import { Header } from "./Header";
 
 export const Explore = (props) => {
   const { albums, artist, pressed, search, setSearchInput, setPressed } =
@@ -11,6 +12,7 @@ export const Explore = (props) => {
 
   return (
     <div className={style.container}>
+      <Header />
       <div className={style.inputSection}>
         <input
           className={style.input}
@@ -43,6 +45,11 @@ export const Explore = (props) => {
 
         <div className={style.cardSection}>
           <Row className="mx-2 row row-cols-6">
+            {!pressed && (
+              <div>
+                <div>Search Something BOI</div>
+              </div>
+            )}
             {albums.map((album, id) => {
               return (
                 <Link

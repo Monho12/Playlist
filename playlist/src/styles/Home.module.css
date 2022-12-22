@@ -4,10 +4,10 @@
 }
 
 .innerContainer {
-  padding: 20px;
-
+  padding: 100px 0 0 0;
   position: relative;
   /* border: 1px solid; */
+  height: 90vh;
 }
 
 .img {
@@ -24,7 +24,7 @@
   animation: animate 3s linear infinite;
 }
 
-@keyframes animate {
+/* @keyframes animate {
   0% {
     color: #2a9d8f;
   }
@@ -37,10 +37,10 @@
   100% {
     color: #2a9d8f;
   }
-}
+} */
 .button {
   position: absolute;
-  bottom: 100px;
+  bottom: 30px;
   right: 35vw;
   border-radius: 40px;
   outline: none;
@@ -55,5 +55,7 @@
   height: 62px;
 }
 .button:hover {
-  background-color: rgb(242, 221, 58);
+  /* background-color: rgb(242, 221, 58); */
+  background-color: #bc4749;
+  color: wheat;
 }
