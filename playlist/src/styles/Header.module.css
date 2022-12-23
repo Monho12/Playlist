@@ -2,35 +2,30 @@
   height: 60px;
   /* background-color: #656d4a; */
   background-color: #da2c38;
-  display: flex;
 }
+
 .btns {
   display: flex;
   justify-content: end;
   height: 60px;
   gap: 5px;
   align-items: center;
-  border: 1px solid;
+  /* border: 1px solid black; */
 }
 .button {
-  margin-right: 10px;
+  margin-right: 5px;
   border-radius: 40px;
-  outline: none;
   border: none;
-  font-weight: 700;
   font-size: 18px;
-  line-height: 23px;
-  text-align: center;
   letter-spacing: 0.1em;
-  color: #171717;
   width: 100px;
   height: 30px;
 }
 
 .news {
-  /* border: 1px solid white; */
+  border: 2px solid white;
+  width: 1430px;
   display: flex;
-  width: 1400px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
