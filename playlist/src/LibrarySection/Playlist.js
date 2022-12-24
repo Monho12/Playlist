@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import axios from "axios";
 
-export const Playlist = ({ playlist, index, _id }) => {
+export const Playlist = ({ index, _id, title, description }) => {
   const baseUrl = "http://localhost:5000";
 
   const deletePlaylist = () => {
@@ -19,13 +19,14 @@ export const Playlist = ({ playlist, index, _id }) => {
         <div className={style.card}>
           <div className={style.playlistName}>
             <div>{index + 1}.</div>
-            <div>{playlist}</div>
+            <div>{title}</div>
           </div>
         </div>
       </Link>
       <Button
         onClick={deletePlaylist}
-        style={{ position: "absolute", bottom: "35px", left: "60px" }}
+        variant="danger"
+        style={{ position: "absolute", bottom: "35px", left: "57px" }}
       >
         Delete Playlist
       </Button>

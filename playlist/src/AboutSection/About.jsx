@@ -7,7 +7,7 @@ export const About = () => {
       <div className={style.container}>
         <div className={style.container}>
           <div className={style.aboutContainer}>
-            <img src={img} className={style.img} />
+            <img src={img} className={style.img} alt="aboutImg" />
             <div className={style.info}>
               Hi im developer of this site. You can call me "GUSTAVO". We're
               hirin UI & UX Designer. We need graphic designers. Also we need

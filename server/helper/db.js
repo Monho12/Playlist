@@ -1,10 +1,11 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
 
-const uri =
-  "mongodb+srv://monhoo17:Moojoo1108@cluster0.nfmxs54.mongodb.net/?retryWrites=true&w=majority";
+const uri = process.env.uri;
 
 const connect = async () => {
   try {
+    mongoose.set("strictQuery", false);
     await mongoose.connect(uri);
     console.log("Successfully connected");
   } catch (error) {

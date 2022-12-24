@@ -24,20 +24,6 @@
   animation: animate 3s linear infinite;
 }
 
-/* @keyframes animate {
-  0% {
-    color: #2a9d8f;
-  }
-  25% {
-    color: #36cbba;
-  }
-  50% {
-    color: #3cedd9;
-  }
-  100% {
-    color: #2a9d8f;
-  }
-} */
 .button {
   position: absolute;
   bottom: 80px;

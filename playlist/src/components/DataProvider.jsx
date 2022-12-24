@@ -1,6 +1,5 @@
 import { useState, useEffect, createContext } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
 
 const CLIENT_ID = "e11d642ed1f642c789a106fb51132da3";
 const CLIENT_SECRET = "e7033b13995c49bbae01be2dfb2c5134";
@@ -18,6 +17,7 @@ export const DataProvider = (props) => {
   const [album, setAlbum] = useState("");
   const [list, setList] = useState([]);
   const [create, setCreate] = useState(false);
+  const [songs, setSongs] = useState([]);
 
   useEffect(() => {
     var authParameters = {
@@ -42,13 +42,17 @@ export const DataProvider = (props) => {
         console.log(err);
       });
 
-    {
-      (async () => {
-        const res = await axios.get("http://localhost:5000/playlists");
-        console.log(res.data);
-        setList(res.data);
-      })();
-    }
+    (async () => {
+      const res = await axios.get("http://localhost:5000/playlists");
+      console.log(res.data);
+      setList(res.data);
+    })();
+
+    (async () => {
+      const res = await axios.get("http://localhost:5000/songs");
+      console.log(res.data);
+      setSongs(res.data);
+    })();
   }, []);
 
   async function search() {
@@ -123,6 +127,7 @@ export const DataProvider = (props) => {
         list,
         create,
         setCreate,
+        songs,
       }}
     >
       {props.children}

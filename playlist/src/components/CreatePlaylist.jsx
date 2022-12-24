@@ -13,7 +13,7 @@ export const CreatePlaylist = () => {
   useEffect(() => {
     if (playlistName != null) {
       axios
-        .post(baseUrl + "/playlists", { playlist: playlistName })
+        .post(baseUrl + "/playlists", { title: playlistName })
         .then((res) => {
           console.log(res.data);
         })

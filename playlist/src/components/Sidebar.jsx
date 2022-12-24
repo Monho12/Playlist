@@ -15,27 +15,32 @@ export const Sidebar = () => {
     <div className={style.sidebar}>
       <Link to="/">
         <div style={{ padding: "25px" }}>
-          <img src={Logo} style={{ width: "200px" }} draggable="false" />
+          <img
+            src={Logo}
+            style={{ width: "200px" }}
+            draggable="false"
+            alt="logo"
+          />
         </div>
       </Link>
 
       <div className={style.sections}>
         <Link to="/" style={{ textDecoration: "none", color: "wheat" }}>
           <div className={style.innerSection}>
-            <img src={hom} className={style.img} />
+            <img src={hom} className={style.img} alt="home" />
             Home
           </div>
         </Link>
 
         <Link to="/explore" style={{ textDecoration: "none", color: "wheat" }}>
           <div className={style.innerSection}>
-            <img src={exp} className={style.img} /> Explore
+            <img src={exp} className={style.img} alt="explore" /> Explore
           </div>
         </Link>
 
         <Link to="/library" style={{ textDecoration: "none", color: "wheat" }}>
           <div className={style.innerSection}>
-            <img src={lib} className={style.img} /> Library
+            <img src={lib} className={style.img} alt="library" /> Library
           </div>
         </Link>
 
@@ -44,14 +49,14 @@ export const Sidebar = () => {
           onClick={() => setCreate(!create)}
         >
           <div className={style.innerSection}>
-            <img src={add} className={style.img} />
+            <img src={add} className={style.img} alt="addPlaylist" />
             Create Playlist
           </div>
         </Link>
 
         <Link to="/about" style={{ textDecoration: "none", color: "wheat" }}>
           <div className={style.innerSection}>
-            <img src={log} className={style.img} />
+            <img src={log} className={style.img} alt="about" />
             About us
           </div>
         </Link>
@@ -59,13 +64,13 @@ export const Sidebar = () => {
 
       <div className={style.line} />
       <div className={style.playlistSection}>
-        {list.map((item) => {
+        {list.map((item, index) => {
           return (
             <Link
               style={{ textDecoration: "none", color: "wheat" }}
               to={`/playlists/${item._id}`}
             >
-              {item.playlist}
+              {item.title}
             </Link>
           );
         })}
