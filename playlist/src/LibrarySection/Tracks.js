@@ -12,16 +12,18 @@ export const Tracks = () => {
     <div>
       <div>
         <h1>yooy ashgu ci end irle</h1>
+
         {songs.map((item) => {
-          if (item.playlistId == id)
+          if (item.playlistId == id) {
             return (
               <Row className="mx-2 row row-cols-6">
                 <div className={style.container}>
                   <h1>{item.name}</h1>
-                  <h5>{item.playlistId}</h5>
+                  {/* <h5>{item.playlistId}</h5> */}
                 </div>
               </Row>
             );
+          }
         })}
       </div>
     </div>
