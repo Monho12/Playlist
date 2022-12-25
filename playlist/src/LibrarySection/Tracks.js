@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { DataContext } from "../components/DataProvider";
 import { useParams } from "react-router-dom";
-import { Row } from "react-bootstrap";
 import style from "./Tracks.module.css";
 
 export const Tracks = () => {
@@ -9,23 +8,26 @@ export const Tracks = () => {
   const { id } = useParams("");
 
   return (
-    <div>
-      <div>
-        <h1>yooy ashgu ci end irle</h1>
-
-        {songs.map((item) => {
-          if (item.playlistId == id) {
-            return (
-              <Row className="mx-2 row row-cols-6">
-                <div className={style.container}>
-                  <h1>{item.name}</h1>
-                  {/* <h5>{item.playlistId}</h5> */}
+    <>
+      <h1>Songs</h1>
+      {songs.map((item, index) => {
+        if (item.playlistId == id) {
+          return (
+            <div className={style.cardContainer}>
+              <div className={style.songSection}>
+                {!index && <div>{index + 1}.</div>}
+                {index && <div>{index - (index - index)}.</div>}
+                <div className={style.trackName}>
+                  <div style={{ fontWeight: "400" }}>{item.name}</div>
+                  <div style={{ color: "grey", fontWeight: "500" }}>
+                    ID: {item.playlistId}
+                  </div>
                 </div>
-              </Row>
-            );
-          }
-        })}
-      </div>
-    </div>
+              </div>
+            </div>
+          );
+        }
+      })}
+    </>
   );
 };

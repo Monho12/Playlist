@@ -1,4 +1,4 @@
-import style from "../styles/Songs.module.css";
+import style from "./Songs.module.css";
 import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 
@@ -35,7 +35,6 @@ export const Track = ({ name, preview_url, index, artists, duration_ms }) => {
           {index + 1}.
           <div className={style.trackName}>
             <div style={{ fontWeight: "400" }}>{name}</div>
-
             <div style={{ color: "grey", fontWeight: "500" }}>
               {artists[0].name}
             </div>
