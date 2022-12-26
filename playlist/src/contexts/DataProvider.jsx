@@ -128,6 +128,7 @@ export const DataProvider = (props) => {
         create,
         setCreate,
         songs,
+        setList,
       }}
     >
       {props.children}

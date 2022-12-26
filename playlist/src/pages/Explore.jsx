@@ -1,9 +1,9 @@
-import style from "./Explore.module.css";
+import style from "../styles/Explore.module.css";
 import { useContext } from "react";
 import { Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { AlbumCards } from "./AlbumCards";
-import { DataContext } from "../components/DataProvider";
+import { AlbumCards } from "../components/AlbumCards";
+import { DataContext } from "../contexts/DataProvider";
 
 export const Explore = (props) => {
   const { albums, artist, pressed, search, setSearchInput, setPressed } =

@@ -1,4 +1,4 @@
-import style from "./Songs.module.css";
+import style from "../styles/Songs.module.css";
 import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 

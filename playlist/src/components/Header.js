@@ -7,6 +7,8 @@ export const Header = () => {
         <div className={style.news}>
           <div className={style.inner}>
             Happy Holidays. Thanks for listening notSpotify®. Happy Holidays.
+            Also exclusive mariplier nudes for sale!
+            Special thanks to duuree for supporting LGBTQ+!!
             Thanks for listening notSpotify®. Happy Holidays. Thanks for
             listening notSpotify®. Happy Holidays. Thanks for listening
             notSpotify® Happy Holidays. Thanks for listening notSpotify®. Happy

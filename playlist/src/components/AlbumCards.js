@@ -1,4 +1,4 @@
-import style from "./AlbumCards.module.css";
+import style from "../styles/AlbumCards.module.css";
 import { Card } from "react-bootstrap";
 
 export const AlbumCards = ({ album }) => {

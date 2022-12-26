@@ -1,4 +1,4 @@
-import style from "./Home.module.css";
+import style from "../styles/Home.module.css";
 import img from "../assets/Holiday.png";
 import { Link } from "react-router-dom";
 export const Home = () => {

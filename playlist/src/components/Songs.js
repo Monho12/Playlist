@@ -1,6 +1,6 @@
 import { useState, useContext, useEffect } from "react";
-import style from "./Songs.module.css";
-import { DataContext } from "../components/DataProvider";
+import style from "../styles/Songs.module.css";
+import { DataContext } from "../contexts/DataProvider";
 import { useParams } from "react-router-dom";
 import { Track } from "./Track";
 

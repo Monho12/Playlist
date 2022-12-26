@@ -1,32 +1,27 @@
-import { DataContext } from "./DataProvider";
+import { DataContext } from "../contexts/DataProvider";
 import { useContext, useEffect, useRef, useState } from "react";
 import style from "../styles/CreatePlaylist.module.css";
 import axios from "axios";
 
 export const CreatePlaylist = () => {
-  const { create, setCreate } = useContext(DataContext);
-  const [playlistName, setPlaylistName] = useState();
+  const { create, setCreate, setList, list } = useContext(DataContext);
 
   let name = useRef();
   const baseUrl = "http://localhost:5000";
 
-  useEffect(() => {
-    if (playlistName != null) {
+  const setValue = () => {
+    const title = name.current.value;
+    console.log(name.current.value);
+    if (title)
       axios
-        .post(baseUrl + "/playlists", { title: playlistName })
+        .post(baseUrl + "/playlists", { title: title })
         .then((res) => {
           console.log(res.data);
+          setList([...list, res.data]);
         })
         .catch((err) => {
           console.log(err);
         });
-    }
-  }, [playlistName]);
-
-  const setValue = () => {
-    setPlaylistName(name.current.value);
-    console.log(name.current.value);
-    window.location.reload();
   };
 
   return (

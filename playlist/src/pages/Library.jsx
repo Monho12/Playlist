@@ -1,13 +1,14 @@
-import { DataContext } from "../components/DataProvider";
+import { DataContext } from "../contexts/DataProvider";
 import { useContext } from "react";
-import style from "./Library.module.css";
-import { Playlist } from "./Playlist";
+import style from "../styles/Library.module.css";
+import { Playlist } from "../components/Playlist";
 import { Link } from "react-router-dom";
 import { Row } from "react-bootstrap";
 
 export const Library = () => {
   const { list } = useContext(DataContext);
 
+  console.log(list);
   return (
     <div className={style.container}>
       <div className={style.part}>
@@ -15,6 +16,7 @@ export const Library = () => {
       </div>
       <div className={style.cardSection}>
         <Row className="mx-2 row row-cols-6">
+        
           {list.map((item, index) => {
             return (
               <Link style={{ textDecoration: "none" }}>

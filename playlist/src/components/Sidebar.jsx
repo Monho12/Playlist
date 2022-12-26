@@ -1,7 +1,7 @@
 import style from "../styles/Sidebar.module.css";
 import Logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
-import { DataContext } from "./DataProvider";
+import { DataContext } from "../contexts/DataProvider";
 import { useContext } from "react";
 import add from "../assets/Add.png";
 import lib from "../assets/Library.png";
