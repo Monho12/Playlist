@@ -15,5 +15,4 @@ router
   .post("/playlists", createPlaylist)
   .put("/playlists/:id", addToPlaylist)
   .delete("/playlists/:id", deletePlaylist);
-
 exports.playlistRoutes = router;

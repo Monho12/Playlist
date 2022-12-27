@@ -1,6 +1,6 @@
 .sidebar {
-  /* background-color: #333d29; */
   background-color: #43291f;
+  /* background-color: #202020; */
   height: 100vh;
   width: 300px;
   overflow-y: scroll;
@@ -42,4 +42,3 @@
   width: 16px;
   height: 16px;
 }
-

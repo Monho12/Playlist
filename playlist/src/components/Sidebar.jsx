@@ -8,6 +8,7 @@ import lib from "../assets/Library.png";
 import exp from "../assets/explore.png";
 import hom from "../assets/Home.png";
 import log from "../assets/Spotify.png";
+import user from "../assets/user.png";
 export const Sidebar = () => {
   const { list, create, setCreate } = useContext(DataContext);
   console.log(create);
@@ -58,6 +59,16 @@ export const Sidebar = () => {
           <div className={style.innerSection}>
             <img src={log} className={style.img} alt="about" />
             About us
+          </div>
+        </Link>
+
+        <Link
+          to="/profile/:id" //add id with context (required)
+          style={{ textDecoration: "none", color: "wheat" }}
+        >
+          <div className={style.innerSection}>
+            <img src={user} className={style.img} alt="user" />
+            Profile
           </div>
         </Link>
       </div>

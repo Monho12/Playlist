@@ -27,7 +27,7 @@
 .button {
   position: absolute;
   bottom: 80px;
-  right: 35vw;
+  right: 32vw;
   border-radius: 40px;
   outline: none;
   border: none;
@@ -36,7 +36,6 @@
   line-height: 23px;
   text-align: center;
   letter-spacing: 0.14em;
-
   background-color: #bc4749;
   color: wheat;
   width: 232px;

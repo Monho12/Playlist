@@ -8,6 +8,9 @@ import { Songs } from "./components/Songs";
 import { About } from "./pages/About";
 import { Library } from "./pages/Library";
 import { Tracks } from "./components/Tracks";
+import { Login } from "./components/Login";
+import { Signup } from "./components";
+import { Profile } from "./components/Profile";
 
 function App() {
   return (
@@ -18,7 +21,11 @@ function App() {
           <div className="Container">
             <Header />
             <Routes>
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/profile/:id" element={<Profile />} />
               <Route index element={<Home />} />
+
               <Route path="/explore" element={<Explore />} />
               <Route path="/album">
                 <Route path=":id" element={<Songs />} />

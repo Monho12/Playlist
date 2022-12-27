@@ -1,7 +1,7 @@
 .header {
   height: 60px;
-  /* background-color: #656d4a; */
   background-color: #da2c38;
+  /* background-color: #33333d; */
 }
 
 .btns {
@@ -24,7 +24,7 @@
 
 .news {
   border: 2px solid white;
-  width: 1480px;
+  width: 1430px;
   display: flex;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -34,10 +34,11 @@
 .inner {
   color: rgb(106, 212, 106);
   animation: news 60s linear infinite;
+  animation-iteration-count: infinite;
 }
 @keyframes news {
   0% {
-    transform: translate(80%);
+    transform: translate(100%);
   }
   100% {
     transform: translate(-100%);

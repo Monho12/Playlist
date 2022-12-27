@@ -16,8 +16,6 @@ app.use(songRoutes);
 connect();
 
 app.get("/playlists", async (req, res) => {
-  // const data = await Playlist.find();
-  // res.send(data);
   res.send("hi");
 });
 

@@ -23,11 +23,10 @@ exports.getPlaylist = async (req, res) => {
 };
 
 exports.addToPlaylist = async (req, res) => {
-  const playlistId = req.params.id
+  const playlistId = req.params.id;
   const songId = req.body.id;
   const playlist = await Playlist.findById(playlistId);
   playlist.songs.push(songId);
   await playlist.save();
   res.send(playlist);
 };
-

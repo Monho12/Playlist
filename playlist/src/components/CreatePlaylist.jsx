@@ -14,7 +14,7 @@ export const CreatePlaylist = () => {
     console.log(name.current.value);
     if (title)
       axios
-        .post(baseUrl + "/playlists", { title: title })
+        .post(baseUrl + "/playlists", { title: title }) //add CreatorId: account.uid with context(required)
         .then((res) => {
           console.log(res.data);
           setList([...list, res.data]);
@@ -25,34 +25,52 @@ export const CreatePlaylist = () => {
   };
 
   return (
-    <div
-      className={
-        create ? style.container : `${style.container}  ${style.displayNone}`
-      }
-    >
-      <div onClick={() => setCreate(!create)} className={style.close}>
-        ❌
-      </div>
-
-      <div style={{ color: "wheat", fontSize: "28px" }}>
-        Create your holiday playlist
-      </div>
-
-      <input
-        placeholder="Enter your playlist name"
-        ref={name}
-        className={style.input}
-        onKeyPress={(event) => {
-          if (event.key == "Enter") {
-            setValue();
-            setCreate(!create);
+    <>
+      {false && (
+        <div
+          className={
+            create
+              ? style.container
+              : `${style.container}  ${style.displayNone}`
           }
-        }}
-      />
+          style={{ color: "white", paddingTop: "10vh" }}
+        >
+          You must log in to your account before create playlist
+        </div>
+      )}
+      {true && (
+        <div
+          className={
+            create
+              ? style.container
+              : `${style.container}  ${style.displayNone}`
+          }
+        >
+          <div onClick={() => setCreate(!create)} className={style.close}>
+            ❌
+          </div>
 
-      <button onClick={setValue} className={style.button}>
-        Create
-      </button>
-    </div>
+          <div style={{ color: "wheat", fontSize: "28px" }}>
+            Create your holiday playlist
+          </div>
+
+          <input
+            placeholder="Enter your playlist name"
+            ref={name}
+            className={style.input}
+            onKeyPress={(event) => {
+              if (event.key == "Enter") {
+                setValue();
+                setCreate(!create);
+              }
+            }}
+          />
+
+          <button onClick={setValue} className={style.button}>
+            Create
+          </button>
+        </div>
+      )}
+    </>
   );
 };
