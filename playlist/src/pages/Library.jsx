@@ -16,7 +16,6 @@ export const Library = () => {
       </div>
       <div className={style.cardSection}>
         <Row className="mx-2 row row-cols-6">
-        
           {list.map((item, index) => {
             return (
               <Link style={{ textDecoration: "none" }}>
