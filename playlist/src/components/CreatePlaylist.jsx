@@ -1,5 +1,5 @@
 import { DataContext } from "../contexts/DataProvider";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useRef } from "react";
 import style from "../styles/CreatePlaylist.module.css";
 import axios from "axios";
 
@@ -12,6 +12,7 @@ export const CreatePlaylist = () => {
   const setValue = () => {
     const title = name.current.value;
     console.log(name.current.value);
+    setCreate(!create);
     if (title)
       axios
         .post(baseUrl + "/playlists", { title: title }) //add CreatorId: account.uid with context(required)

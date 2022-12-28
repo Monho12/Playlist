@@ -55,13 +55,6 @@ export const Sidebar = () => {
           </div>
         </Link>
 
-        <Link to="/about" style={{ textDecoration: "none", color: "wheat" }}>
-          <div className={style.innerSection}>
-            <img src={log} className={style.img} alt="about" />
-            About us
-          </div>
-        </Link>
-
         <Link
           to="/profile/:id" //add id with context (required)
           style={{ textDecoration: "none", color: "wheat" }}
@@ -69,6 +62,13 @@ export const Sidebar = () => {
           <div className={style.innerSection}>
             <img src={user} className={style.img} alt="user" />
             Profile
+          </div>
+        </Link>
+
+        <Link to="/about" style={{ textDecoration: "none", color: "wheat" }}>
+          <div className={style.innerSection}>
+            <img src={log} className={style.img} alt="about" />
+            About us
           </div>
         </Link>
       </div>

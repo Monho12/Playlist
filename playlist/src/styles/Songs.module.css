@@ -1,6 +1,6 @@
 .innerContainer {
   display: flex;
-  height: 85vh;
+  height: 80vh;
   overflow-y: scroll;
   flex-direction: column;
   gap: 20px;

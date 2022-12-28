@@ -15,6 +15,8 @@ export const Profile = () => {
         const profile = user;
         console.log(profile);
         setAccount(profile);
+      } else {
+        setAccount("");
       }
     });
   }, []);

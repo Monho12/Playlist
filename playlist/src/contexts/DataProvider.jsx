@@ -17,7 +17,6 @@ export const DataProvider = (props) => {
   const [album, setAlbum] = useState("");
   const [list, setList] = useState([]);
   const [create, setCreate] = useState(false);
-  const [songs, setSongs] = useState([]);
 
   useEffect(() => {
     var authParameters = {
@@ -46,12 +45,6 @@ export const DataProvider = (props) => {
       const res = await axios.get("http://localhost:5000/playlists");
       console.log(res.data);
       setList(res.data);
-    })();
-
-    (async () => {
-      const res = await axios.get("http://localhost:5000/songs");
-      console.log(res.data);
-      setSongs(res.data);
     })();
   }, []);
 
@@ -127,7 +120,6 @@ export const DataProvider = (props) => {
         list,
         create,
         setCreate,
-        songs,
         setList,
       }}
     >

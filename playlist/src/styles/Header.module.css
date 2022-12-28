@@ -24,7 +24,7 @@
 
 .news {
   border: 2px solid white;
-  width: 1430px;
+  width: 1550px;
   display: flex;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -34,7 +34,6 @@
 .inner {
   color: rgb(106, 212, 106);
   animation: news 60s linear infinite;
-  animation-iteration-count: infinite;
 }
 @keyframes news {
   0% {
