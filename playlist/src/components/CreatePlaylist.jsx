@@ -4,7 +4,7 @@ import style from "../styles/CreatePlaylist.module.css";
 import axios from "axios";
 
 export const CreatePlaylist = () => {
-  const { create, setCreate, setList, list } = useContext(DataContext);
+  const { create, setCreate, setList, list, account } = useContext(DataContext);
 
   let name = useRef();
   const baseUrl = "http://localhost:5000";
@@ -15,7 +15,7 @@ export const CreatePlaylist = () => {
     setCreate(!create);
     if (title)
       axios
-        .post(baseUrl + "/playlists", { title: title }) //add CreatorId: account.uid with context(required)
+        .post(baseUrl + "/playlists", { title: title, CreatorId: account.uid }) //add CreatorId: account.uid with context(required)
         .then((res) => {
           console.log(res.data);
           setList([...list, res.data]);
@@ -27,7 +27,7 @@ export const CreatePlaylist = () => {
 
   return (
     <>
-      {false && (
+      {!account && (
         <div
           className={
             create
@@ -39,7 +39,7 @@ export const CreatePlaylist = () => {
           You must log in to your account before create playlist
         </div>
       )}
-      {true && (
+      {account && (
         <div
           className={
             create

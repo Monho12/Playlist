@@ -1,30 +1,11 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { auth } from "../config/firebase";
+import { Link } from "react-router-dom";
 import style from "../styles/Signup.module.css";
 import { Button } from "react-bootstrap";
+import { useContext } from "react";
+import { DataContext } from "../contexts/DataProvider";
 
 export const Signup = () => {
-  const navigate = useNavigate();
-  const [password, setPassword] = useState();
-  const [email, setEmail] = useState();
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log(user);
-        navigate("/login");
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
-      });
-  };
+  const { setEmail, setPassword, onSubmit } = useContext(DataContext);
 
   return (
     <div className={style.container}>

@@ -1,6 +1,10 @@
 import { useState, useEffect, createContext } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { auth } from "../config/firebase";
 const CLIENT_ID = "e11d642ed1f642c789a106fb51132da3";
 const CLIENT_SECRET = "e7033b13995c49bbae01be2dfb2c5134";
 const baseUrl = "https://accounts.spotify.com/api/token";
@@ -17,6 +21,11 @@ export const DataProvider = (props) => {
   const [album, setAlbum] = useState("");
   const [list, setList] = useState([]);
   const [create, setCreate] = useState(false);
+  const [password, setPassword] = useState();
+  const [email, setEmail] = useState();
+  const [check, setCheck] = useState(null);
+  const [account, setAccount] = useState(null);
+  // const navigate = useNavigate(); (Temuugenees asuuh)
 
   useEffect(() => {
     var authParameters = {
@@ -46,7 +55,63 @@ export const DataProvider = (props) => {
       console.log(res.data);
       setList(res.data);
     })();
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const profile = user;
+        console.log(profile);
+        setAccount(profile);
+      } else {
+        setAccount("");
+      }
+    });
   }, []);
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+        // navigate("/login");
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+      });
+  };
+
+  const Login = (e) => {
+    e.preventDefault();
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log("log in to ", user.uid);
+        // navigate(`/profile/${user.uid}`);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        setCheck(errorCode);
+        console.log(errorCode, errorMessage);
+      });
+  };
+
+  const Logout = () => {
+    signOut(auth)
+      .then(() => {
+        console.log("Logged out");
+        // navigate("/login");
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+      });
+  };
 
   async function search() {
     console.log("Search for " + searchInput);
@@ -121,6 +186,13 @@ export const DataProvider = (props) => {
         create,
         setCreate,
         setList,
+        onSubmit,
+        setEmail,
+        setPassword,
+        Login,
+        check,
+        account,
+        Logout,
       }}
     >
       {props.children}

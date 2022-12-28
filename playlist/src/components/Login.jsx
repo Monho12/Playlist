@@ -1,32 +1,11 @@
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { auth } from "../config/firebase";
+import { Link } from "react-router-dom";
 import style from "../styles/Login.module.css";
 import { Button } from "react-bootstrap";
+import { useContext } from "react";
+import { DataContext } from "../contexts/DataProvider";
 
 export const Login = () => {
-  const navigate = useNavigate();
-  const [password, setPassword] = useState();
-  const [email, setEmail] = useState(null);
-  const [check, setCheck] = useState(null);
-
-  const Login = (e) => {
-    e.preventDefault();
-
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log("log in to ", user.uid);
-        navigate(`/profile/${user.uid}`);
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        setCheck(errorCode);
-        console.log(errorCode, errorMessage);
-      });
-  };
+  const { check, setPassword, setEmail, Login } = useContext(DataContext);
 
   return (
     <div className={style.container}>
@@ -54,11 +33,6 @@ export const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
             aria-label="Default"
             aria-describedby="inputGroup-sizing-default"
-            onKeyPress={(event) => {
-              if (event.key == "Enter") {
-                Login();
-              }
-            }}
           />
         </div>
         <Button onClick={Login}>Log in</Button>

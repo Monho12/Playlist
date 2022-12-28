@@ -10,7 +10,7 @@ import hom from "../assets/Home.png";
 import log from "../assets/Spotify.png";
 import user from "../assets/user.png";
 export const Sidebar = () => {
-  const { list, create, setCreate } = useContext(DataContext);
+  const { list, create, setCreate, account } = useContext(DataContext);
   console.log(create);
   return (
     <div className={style.sidebar}>
@@ -56,7 +56,7 @@ export const Sidebar = () => {
         </Link>
 
         <Link
-          to="/profile/:id" //add id with context (required)
+          to={`/profile/${account ? account.uid : "id"}`}
           style={{ textDecoration: "none", color: "wheat" }}
         >
           <div className={style.innerSection}>
@@ -77,12 +77,20 @@ export const Sidebar = () => {
       <div className={style.playlistSection}>
         {list.map((item, index) => {
           return (
-            <Link
-              style={{ textDecoration: "none", color: "wheat" }}
-              to={`/playlists/${item._id}`}
-            >
-              {item.title}
-            </Link>
+            <>
+              {account && (
+                <>
+                  {list[index].CreatorId == account.uid && (
+                    <Link
+                      style={{ textDecoration: "none", color: "wheat" }}
+                      to={`/playlists/${item._id}`}
+                    >
+                      {item.title}
+                    </Link>
+                  )}
+                </>
+              )}
+            </>
           );
         })}
       </div>
