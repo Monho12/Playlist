@@ -6,11 +6,9 @@
 
 .btns {
   display: flex;
-  justify-content: end;
   height: 60px;
-  gap: 5px;
+  gap: 10px;
   align-items: center;
-  /* border: 1px solid black; */
 }
 .button {
   margin-right: 5px;
@@ -24,22 +22,27 @@
 
 .news {
   border: 2px solid white;
-  width: 1550px;
-  display: flex;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  margin-left: 10px;
+  width: 100%;
 }
 
 .inner {
   color: rgb(106, 212, 106);
-  animation: news 60s linear infinite;
+  white-space: nowrap;
 }
+
+.marqueeStyle {
+  display: inline-block;
+  padding-left: 100%;
+  animation: news 30s linear infinite;
+}
+
 @keyframes news {
   0% {
-    transform: translate(100%);
+    transform: translate(0, 0);
   }
   100% {
-    transform: translate(-100%);
+    transform: translate(-100%, 0);
   }
 }

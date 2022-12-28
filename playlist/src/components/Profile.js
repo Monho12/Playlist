@@ -8,15 +8,17 @@ export const Profile = () => {
 
   return (
     <div className={style.container}>
-      <h1>Profile</h1>
-      {!account && <div>You must log in</div>}
-      {account && (
-        <div className={style.innerContainer}>
-          <h2>Email: {account ? account.email : "not logged in"}</h2>
-          <h2>Id: {account ? account.uid : "not logged in"}</h2>
-          <Button onClick={Logout}>Log Out</Button>
-        </div>
-      )}
+      <div className={style.part}>
+        <h1>Profile</h1>
+        {!account && <div className={style.font}>You must log in</div>}
+        {account && (
+          <div>
+            <h2>Email: {account ? account.email : "not logged in"}</h2>
+            <h2>Id: {account ? account.uid : "not logged in"}</h2>
+            <Button onClick={Logout}>Log Out</Button>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

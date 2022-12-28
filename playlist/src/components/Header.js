@@ -10,12 +10,11 @@ export const Header = () => {
       <div className={style.btns}>
         <div className={style.news}>
           <div className={style.inner}>
-            Happy Holidays. Thanks for listening notSpotify®. Happy Holidays.
-            Also exclusive mariplier nudes for sale! Special thanks to duuree
-            for supporting LGBTQ+!! Thanks for listening notSpotify®. Happy
-            Holidays. Thanks for listening notSpotify®. Happy Holidays. Thanks
-            for listening notSpotify® Happy Holidays. Thanks for listening
-            notSpotify®. Happy Holidays. Thanks for listening notSpotify®.
+            <div className={style.marqueeStyle}>
+              Happy Holidays. Thanks for listening notSpotify®. Also exclusive
+              markiplier nudes for sale! Special thanks to duuree for supporting
+              LGBTQ+!!.
+            </div>
           </div>
         </div>
         {!account && (

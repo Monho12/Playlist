@@ -69,12 +69,12 @@ export const DataProvider = (props) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-
+    
     createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log(user);
-        // navigate("/login");
+    .then((userCredential) => {
+      const user = userCredential.user;
+      console.log(user);
+      // navigate("/login");
       })
       .catch((error) => {
         const errorCode = error.code;
