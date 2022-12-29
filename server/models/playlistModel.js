@@ -1,13 +1,38 @@
 const { Schema, model, Types } = require("mongoose");
 
 const playlistSchema = new Schema({
-  title: String,
-  CreatorId: String,
-  createdAt: { type: Date, default: Date.now() },
-  updatedAt: Date,
-  isPrivate: Boolean,
-  songs: [{ type: Schema.Types.ObjectId, ref: "songs" }],
+  title: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    default: "",
+  },
+  isPrivate: {
+    type: Boolean,
+    default: false,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now(),
+  },
+  CreatorId: {
+    type: String,
+  },
+  Creator: {
+    type: Schema.Types.ObjectId,
+    // required: tsrue,
+    ref: "User",
+  },
+  songs: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "songs",
+    },
+  ],
 });
 
 const Playlist = model("playlist", playlistSchema);
-exports.Playlist = Playlist;
+
+module.exports.Playlist = Playlist;

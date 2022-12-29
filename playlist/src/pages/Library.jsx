@@ -8,6 +8,8 @@ import { Row } from "react-bootstrap";
 export const Library = () => {
   const { list, account } = useContext(DataContext);
 
+  console.log(list);
+
   return (
     <div className={style.container}>
       <div className={style.part}>

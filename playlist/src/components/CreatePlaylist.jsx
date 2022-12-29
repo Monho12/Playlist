@@ -7,6 +7,7 @@ export const CreatePlaylist = () => {
   const { create, setCreate, setList, list, account } = useContext(DataContext);
 
   let name = useRef();
+  let descref = useRef();
   const baseUrl = "http://localhost:5000";
 
   const setValue = () => {
@@ -15,7 +16,11 @@ export const CreatePlaylist = () => {
     setCreate(!create);
     if (title)
       axios
-        .post(baseUrl + "/playlists", { title: title, CreatorId: account.uid }) //add CreatorId: account.uid with context(required)
+        .post(baseUrl + "/playlists", {
+          title: title,
+          description: descref.current.value,
+          CreatorId: account.uid,
+        })
         .then((res) => {
           console.log(res.data);
           setList([...list, res.data]);
@@ -56,7 +61,7 @@ export const CreatePlaylist = () => {
           </div>
 
           <input
-            placeholder="Enter your playlist name"
+            placeholder="Playlist name"
             ref={name}
             className={style.input}
             onKeyPress={(event) => {
@@ -66,6 +71,18 @@ export const CreatePlaylist = () => {
               }
             }}
           />
+
+          <input
+            placeholder="Description"
+            ref={descref}
+            className={style.input}
+            onKeyPress={(event) => {
+              if (event.key == "Enter") {
+                setValue();
+                setCreate(!create);
+              }
+            }}
+          ></input>
 
           <button onClick={setValue} className={style.button}>
             Create

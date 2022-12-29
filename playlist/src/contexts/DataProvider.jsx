@@ -1,9 +1,14 @@
 import { useState, useEffect, createContext } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { onAuthStateChanged, signOut } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+  updateProfile,
+} from "firebase/auth";
+
 import { auth } from "../config/firebase";
 const CLIENT_ID = "e11d642ed1f642c789a106fb51132da3";
 const CLIENT_SECRET = "e7033b13995c49bbae01be2dfb2c5134";
@@ -25,6 +30,7 @@ export const DataProvider = (props) => {
   const [email, setEmail] = useState();
   const [check, setCheck] = useState(null);
   const [account, setAccount] = useState(null);
+  const [displayName, setDisplayName] = useState();
   // const navigate = useNavigate(); (Temuugenees asuuh)
 
   useEffect(() => {
@@ -69,12 +75,12 @@ export const DataProvider = (props) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    
+
     createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      const user = userCredential.user;
-      console.log(user);
-      // navigate("/login");
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+        // navigate("/login");
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -112,6 +118,13 @@ export const DataProvider = (props) => {
         console.log(errorCode, errorMessage);
       });
   };
+
+  // const Update = () => {
+  //   updateProfile(auth.currentUser, {}).then((res) => {
+  //     const displayName = account.displayName;
+  //     setDisplayName(displayName);
+  //   });
+  // };
 
   async function search() {
     console.log("Search for " + searchInput);
@@ -193,6 +206,7 @@ export const DataProvider = (props) => {
         check,
         account,
         Logout,
+        // Update,
       }}
     >
       {props.children}

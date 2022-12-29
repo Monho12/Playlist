@@ -1,5 +1,5 @@
 const experss = require("express");
-const { createSong, getSong } = require("../controller/songController");
+const { createSong, getSong } = require("../controller/song.controller");
 
 const router = experss.Router();
 
@@ -9,4 +9,4 @@ router
   .put("/song/:id", () => {})
   .delete("/song/id", () => {});
 
-exports.songroutes = router;
+module.exports.songRoutes = router;
