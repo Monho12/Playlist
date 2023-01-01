@@ -6,7 +6,7 @@ const createUser = async (req, res) => {
   res.send(result);
 };
 
-const getUsers = async (req, res) => {
+const getUsers = async (_req, res) => {
   const result = await User.find({});
   res.send(result);
 };

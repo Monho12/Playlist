@@ -26,7 +26,7 @@ export const Header = () => {
                 Sign up
               </button>
             </Link>
-            <Link to="login">
+            <Link to="/login">
               <button
                 className={style.button}
                 style={{ backgroundColor: "#6D6D9E", color: "white" }}
@@ -36,16 +36,11 @@ export const Header = () => {
             </Link>
           </>
         )}
-        <Link
-          to={`/profile/${account.uid}`}
-          style={{ color: "white", textDecoration: "none" }}
-        >
-          {account && (
-            <div>
-              <span>{account && account.email}</span>
-            </div>
-          )}
-        </Link>
+        {account && (
+          <div>
+            <span>{account && account.email}</span>
+          </div>
+        )}
       </div>
     </div>
   );
