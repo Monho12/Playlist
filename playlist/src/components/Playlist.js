@@ -30,7 +30,7 @@ export const Playlist = ({ index, _id, title, description }) => {
               <div>{title}</div>
             </div>
             <div
-              style={{ color: "green", fontWeight: "400", fontSize: "14px" }}
+              style={{ color: "#A7A7CC", fontWeight: "400", fontSize: "14px" }}
             >
               {description}
             </div>
@@ -38,7 +38,6 @@ export const Playlist = ({ index, _id, title, description }) => {
         </Link>
         <Button
           onClick={deletePlaylist}
-          variant="danger"
           style={{ position: "absolute", bottom: "35px", left: "57px" }}
         >
           Delete Playlist

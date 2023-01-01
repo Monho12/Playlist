@@ -9,14 +9,14 @@
   border-radius: 10px;
   padding: 15px;
   display: flex;
-  color: red;
+  color: white;
+  background-color: #47475c;
   flex-direction: column;
-  background-color: white;
   transition: 200ms;
 }
 
 .card:hover {
-  background-color: wheat;
+  background-color: #676786;
   transition: 200ms;
 }
 

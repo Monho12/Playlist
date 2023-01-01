@@ -8,7 +8,7 @@ export const AlbumCards = ({ album }) => {
         <Card.Img src={album.images[0].url} style={{ borderRadius: "5px" }} />
         <div className={style.albumName}>
           <div>{album.name}</div>
-          <div style={{ color: "green", fontWeight: "400" }}>
+          <div style={{ color: "#A7A7CC", fontWeight: "400" }}>
             • {album.album_type}
           </div>
         </div>

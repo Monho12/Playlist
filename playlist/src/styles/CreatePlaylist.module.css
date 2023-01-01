@@ -1,7 +1,6 @@
 .container {
   width: 500px;
-  /* height: 230px; */
-  background-color: #43291f;
+  background-color: #47475c;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,8 +25,8 @@
   line-height: 23px;
   text-align: center;
   letter-spacing: 0.14em;
-  background-color: #bc4749;
-  color: wheat;
+  background-color: #3b3e68;
+  color: white;
   width: 150px;
   height: 40px;
   margin-top: 10px;

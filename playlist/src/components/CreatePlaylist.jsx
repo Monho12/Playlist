@@ -2,6 +2,7 @@ import { DataContext } from "../contexts/DataProvider";
 import { useContext, useRef } from "react";
 import style from "../styles/CreatePlaylist.module.css";
 import axios from "axios";
+import close from "../assets/close.png";
 
 export const CreatePlaylist = () => {
   const { create, setCreate, setList, list, account } = useContext(DataContext);
@@ -53,11 +54,11 @@ export const CreatePlaylist = () => {
           }
         >
           <div onClick={() => setCreate(!create)} className={style.close}>
-            ❌
+            <img src={close} />
           </div>
 
-          <div style={{ color: "wheat", fontSize: "28px" }}>
-            Create your holiday playlist
+          <div style={{ color: "white", fontSize: "28px" }}>
+            Create your playlist
           </div>
 
           <input

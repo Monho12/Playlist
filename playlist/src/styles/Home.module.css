@@ -4,30 +4,20 @@
 }
 
 .innerContainer {
-  padding: 100px 0 0 0;
+  padding: 50px 0 0 0;
   position: relative;
   /* border: 1px solid; */
   height: 90vh;
 }
 
 .img {
-  width: 75vw;
-}
-
-.name {
-  position: absolute;
-  top: 30vh;
-  right: 30vw;
-  margin-top: 0;
-  font-weight: 700;
-  font-size: 36px;
-  animation: animate 3s linear infinite;
+  width: 65vw;
 }
 
 .button {
   position: absolute;
-  bottom: 40px;
-  right: 32vw;
+  bottom: 60px;
+  right: 28vw;
   border-radius: 40px;
   outline: none;
   border: none;
@@ -36,14 +26,13 @@
   line-height: 23px;
   text-align: center;
   letter-spacing: 0.14em;
-  background-color: #bc4749;
-  color: wheat;
+  background-color: #3b3e68;
+  color: white;
   width: 232px;
   height: 62px;
   transition: 300ms;
 }
 .button:hover {
-  /* background-color: rgb(242, 221, 58); */
-  background-color: #ee6c6e;
-  color: wheat;
+  background-color: #555994;
+  color: white;
 }

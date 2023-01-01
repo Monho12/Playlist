@@ -11,9 +11,8 @@ export const Header = () => {
         <div className={style.news}>
           <div className={style.inner}>
             <div className={style.marqueeStyle}>
-              Happy Holidays. Thanks for listening notSpotify®. Also exclusive
-              markiplier nudes for sale! Special thanks to duuree for supporting
-              LGBTQ+!!.
+              Thanks for listening notSpotify®. Also exclusive markiplier nudes
+              for sale! Special thanks to duuree for supporting LGBTQ+!!.
             </div>
           </div>
         </div>
@@ -22,7 +21,7 @@ export const Header = () => {
             <Link to="/signup">
               <button
                 className={style.button}
-                style={{ backgroundColor: "#f4f0bb", color: "black" }}
+                style={{ backgroundColor: "#D9D9D9", color: "black" }}
               >
                 Sign up
               </button>
@@ -30,18 +29,23 @@ export const Header = () => {
             <Link to="login">
               <button
                 className={style.button}
-                style={{ backgroundColor: "#226f54", color: "white" }}
+                style={{ backgroundColor: "#6D6D9E", color: "white" }}
               >
                 Log in
               </button>
             </Link>
           </>
         )}
-        {account && (
-          <div>
-            <span>{account && account.email}</span>
-          </div>
-        )}
+        <Link
+          to={`/profile/${account.uid}`}
+          style={{ color: "white", textDecoration: "none" }}
+        >
+          {account && (
+            <div>
+              <span>{account && account.email}</span>
+            </div>
+          )}
+        </Link>
       </div>
     </div>
   );
