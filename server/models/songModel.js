@@ -1,7 +1,6 @@
 const { Schema, model, Types } = require("mongoose");
 
 const songSchema = new Schema({
-  playlistId: Types.ObjectId,
   name: {
     type: String,
     required: true,
@@ -10,10 +9,13 @@ const songSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "User",
   },
-  artist: {
-    type: Schema.Types.ObjectId,
-    ref: "Artist",
-  },
+  artist: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "artist",
+    },
+  ],
+
   createdAt: {
     type: Date,
     default: Date.now(),

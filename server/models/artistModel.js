@@ -1,8 +1,9 @@
 const { Schema, model } = require("mongoose");
 
 const artistSchema = new Schema({
-  artist: {
-    String,
+  name: {
+    type: String,
+    required: true,
   },
   creator: {
     type: Schema.Types.ObjectId,
@@ -14,6 +15,6 @@ const artistSchema = new Schema({
   },
 });
 
-const Artist = model("Artist", artistSchema);
+const Artist = model("artist", artistSchema);
 
 module.exports.Artist = Artist;

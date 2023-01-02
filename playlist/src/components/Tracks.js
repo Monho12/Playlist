@@ -9,11 +9,10 @@ export const Tracks = () => {
   useEffect(() => {
     (async () => {
       const res = await axios.get("http://localhost:5000/playlists/" + id);
-      // console.log(res.data.songs);
+      console.log(res.data.songs[0]);
       setSongs([res.data.songs]);
     })();
-  }, [songs]);
-
+  }, []);
   return (
     <>
       <h1>Songs</h1>

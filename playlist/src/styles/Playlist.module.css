@@ -1,7 +1,6 @@
 .container {
-  padding: 20px;
+  padding: 10px;
   display: flex;
-  flex-direction: column;
   gap: 5vh;
   position: relative;
 }
@@ -10,20 +9,37 @@
   gap: 2vh;
   border-radius: 10px;
   padding: 15px;
+  display: flex;
   color: white;
   background-color: #47475c;
-  height: 120px;
-  width: 200px;
+  flex-direction: column;
   transition: 200ms;
 }
 
-.playlistName {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  gap: 5%;
-  width: 150px;
+.card:hover {
+  background-color: #676786;
+  transition: 200ms;
+}
+
+.albumName {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  width: 200px;
+}
+
+.play {
+  transition: 300ms;
+  position: relative;
+  top: -60px;
+  opacity: 0;
+  width: 60px;
+  height: 60px;
+  margin-left: 125px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.card:hover .play {
+  opacity: 1;
+  top: -70px;
 }

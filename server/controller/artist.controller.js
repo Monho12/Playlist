@@ -12,7 +12,7 @@ const getArtists = async (req, res) => {
 };
 
 const getArtist = async (req, res) => {
-  const result = await Artist.findbyID(req.params.id);
+  const result = await Artist.findById(req.params.id);
   res.send(result);
 };
 

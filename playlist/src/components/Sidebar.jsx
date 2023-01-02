@@ -13,7 +13,7 @@ import { AuthContext } from "../contexts/AuthProvider";
 export const Sidebar = () => {
   const { list, create, setCreate, account } = useContext(DataContext);
   const { user } = useContext(AuthContext);
-  console.log(create);
+
   return (
     <div className={style.sidebar}>
       <Link to="/">
@@ -80,7 +80,7 @@ export const Sidebar = () => {
         {list.map((item, index) => {
           return (
             <>
-              {account && (
+              {user && (
                 <>
                   {list[index].Creator == user._id && (
                     <Link

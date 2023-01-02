@@ -1,10 +1,15 @@
 const experss = require("express");
-const { createSong, getSong } = require("../controller/song.controller");
+const {
+  createSong,
+  getSongs,
+  getSong,
+} = require("../controller/song.controller");
 
 const router = experss.Router();
 
 router
-  .get("/songs", getSong)
+  .get("/songs", getSongs)
+  .get("/song/:id", getSong)
   .post("/songs", createSong)
   .put("/song/:id", () => {})
   .delete("/song/id", () => {});

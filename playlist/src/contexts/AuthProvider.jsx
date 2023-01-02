@@ -23,6 +23,19 @@ export const AuthProvider = (props) => {
       });
   };
 
+  const signup = (username, password) => {
+    axios
+      .post("http://localhost:5000" + "/signup", {
+        username: username,
+        password: password,
+      })
+      .then((res) => {
+        setUser(res.data);
+        window.localStorage.setItem("credentials", JSON.stringify(res.data));
+        navigate(`/profile/${user && user._id}`);
+      });
+  };
+
   const logout = () => {
     setUser(null);
     window.localStorage.removeItem("credentials");
@@ -43,6 +56,7 @@ export const AuthProvider = (props) => {
         login,
         logout,
         user,
+        signup,
       }}
     >
       {props.children}

@@ -2,6 +2,7 @@ import style from "../styles/Header.module.css";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../contexts/AuthProvider";
+import pfp from "../assets/pfp.png";
 export const Header = () => {
   const { user } = useContext(AuthContext);
 
@@ -37,8 +38,9 @@ export const Header = () => {
           </>
         )}
         {user && (
-          <div>
-            <span>{user && user.username}</span>
+          <div className={style.profile}>
+            <img src={pfp} style={{ height: "30px", width: "30px" }} />
+            <div>{user && user.username}</div>
           </div>
         )}
       </div>

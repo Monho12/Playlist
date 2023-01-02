@@ -6,15 +6,14 @@ const createSong = async (req, res) => {
   res.send(result);
 };
 
-const getSong = async (req, res) => {
-  const playlistId = req.query.playlistId;
-
-  if (playlistId) {
-    const result = await Song.find({ playlistId });
-    return res.send(result);
-  }
+const getSongs = async (req, res) => {
   const result = await Song.find({});
   res.send(result);
 };
 
-module.exports = { createSong, getSong };
+const getSong = async (req, res) => {
+  const result = await Song.findById(req.params.id).populate("artist");
+  res.send(result);
+};
+
+module.exports = { createSong, getSongs, getSong };

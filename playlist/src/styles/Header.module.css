@@ -45,3 +45,13 @@
     transform: translate(-100%, 0);
   }
 }
+
+.profile {
+  display: flex;
+  border: 1px solid;
+  border-radius: 50px;
+  font-size: 18px;
+  padding: 5px;
+  background-color: black;
+  gap: 5px;
+}

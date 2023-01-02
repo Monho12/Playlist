@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
 import style from "../styles/Signup.module.css";
 import { Button } from "react-bootstrap";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../contexts/AuthProvider";
 
 export const Signup = () => {
-  const { setUsername, setPassword, onSubmit } = useContext(AuthContext);
+  const { signup } = useContext(AuthContext);
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   return (
     <div className={style.container}>
@@ -34,7 +37,7 @@ export const Signup = () => {
             aria-describedby="inputGroup-sizing-default"
           />
         </div>
-        <Button onClick={onSubmit}>Sign Up</Button>
+        <Button onClick={() => signup(username, password)}>Sign Up</Button>
         <div>
           Already have account? <Link to="/login">Log in</Link>
         </div>
