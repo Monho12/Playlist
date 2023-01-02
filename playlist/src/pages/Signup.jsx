@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import style from "../styles/Signup.module.css";
 import { Button } from "react-bootstrap";
 import { useContext } from "react";
-import { DataContext } from "../contexts/DataProvider";
+import { AuthContext } from "../contexts/AuthProvider";
 
 export const Signup = () => {
-  const { setEmail, setPassword, onSubmit } = useContext(DataContext);
+  const { setUsername, setPassword, onSubmit } = useContext(AuthContext);
 
   return (
     <div className={style.container}>
@@ -18,7 +18,7 @@ export const Signup = () => {
             class="form-control"
             placeholder="enter your email"
             aria-label="Default"
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setUsername(e.target.value)}
             aria-describedby="inputGroup-sizing-default"
           />
         </div>

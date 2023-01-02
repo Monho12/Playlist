@@ -2,40 +2,51 @@ import { Link } from "react-router-dom";
 import style from "../styles/Login.module.css";
 import { Button } from "react-bootstrap";
 import { useContext } from "react";
-import { DataContext } from "../contexts/DataProvider";
+import { AuthContext } from "../contexts/AuthProvider";
+import { useState } from "react";
 
 export const Login = () => {
-  const { check, setPassword, setEmail, Login } = useContext(DataContext);
+  const { login } = useContext(AuthContext);
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   return (
     <div className={style.container}>
-      <div style={{ fontWeight: "300", color: "red" }}>{check}</div>
       <h1>Log In</h1>
       <div className={style.innerContainer}>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend"></div>
+        <div className="input-group mb-3">
+          <div className="input-group-prepend"></div>
           <input
             type="text"
-            class="form-control"
-            placeholder="enter your email"
+            className="form-control"
+            placeholder="enter your username"
             aria-label="Default"
-            onChange={(e) => setEmail(e.target.value)}
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
             aria-describedby="inputGroup-sizing-default"
           />
         </div>
 
-        <div class="input-group mb-3">
-          <div class="input-group-prepend"></div>
+        <div className="input-group mb-3">
+          <div className="input-group-prepend"></div>
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             placeholder="enter your password"
+            value={password}
             onChange={(e) => setPassword(e.target.value)}
             aria-label="Default"
             aria-describedby="inputGroup-sizing-default"
           />
         </div>
-        <Button onClick={Login}>Log in</Button>
+        <Button
+          onClick={() => {
+            login(username, password);
+          }}
+        >
+          Log in
+        </Button>
         <div>
           Dont have account? <Link to="/signup">Sign up</Link>
         </div>

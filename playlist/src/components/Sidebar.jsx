@@ -8,9 +8,11 @@ import lib from "../assets/Library.png";
 import exp from "../assets/explore.png";
 import hom from "../assets/Home.png";
 import log from "../assets/Spotify.png";
-import user from "../assets/user.png";
+import profile from "../assets/user.png";
+import { AuthContext } from "../contexts/AuthProvider";
 export const Sidebar = () => {
   const { list, create, setCreate, account } = useContext(DataContext);
+  const { user } = useContext(AuthContext);
   console.log(create);
   return (
     <div className={style.sidebar}>
@@ -56,11 +58,11 @@ export const Sidebar = () => {
         </Link>
 
         <Link
-          to={`/profile/${account ? account.uid : "id"}`}
+          to={`/profile/${user ? user._id : "id"}`}
           style={{ textDecoration: "none", color: "wheat" }}
         >
           <div className={style.innerSection}>
-            <img src={user} className={style.img} alt="user" />
+            <img src={profile} className={style.img} alt="user" />
             Profile
           </div>
         </Link>
@@ -80,7 +82,7 @@ export const Sidebar = () => {
             <>
               {account && (
                 <>
-                  {list[index].CreatorId == account.uid && (
+                  {list[index].Creator == user._id && (
                     <Link
                       style={{ textDecoration: "none", color: "wheat" }}
                       to={`/playlists/${item._id}`}

@@ -4,9 +4,11 @@ import style from "../styles/Library.module.css";
 import { Playlist } from "../components/Playlist";
 import { Link } from "react-router-dom";
 import { Row } from "react-bootstrap";
+import { AuthContext } from "../contexts/AuthProvider";
 
 export const Library = () => {
-  const { list, account } = useContext(DataContext);
+  const { list } = useContext(DataContext);
+  const { user } = useContext(AuthContext);
 
   console.log(list);
 
@@ -14,9 +16,9 @@ export const Library = () => {
     <div className={style.container}>
       <div className={style.part}>
         <h1>My Playlists</h1>
-        {!account && (
+        {!user && (
           <div className={style.font}>
-            You dont have playlist because you have not log in to your account
+            You dont have playlist because you have not log in to your user
           </div>
         )}
       </div>
@@ -25,9 +27,9 @@ export const Library = () => {
         {list.map((item, index) => {
           return (
             <>
-              {account && (
+              {user && (
                 <>
-                  {list[index].CreatorId == account.uid && (
+                  {list[index].Creator == user._id && (
                     <Link style={{ textDecoration: "none" }}>
                       <Playlist {...item} index={index} key={index} />
                     </Link>

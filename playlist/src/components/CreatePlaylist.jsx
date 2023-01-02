@@ -3,9 +3,11 @@ import { useContext, useRef } from "react";
 import style from "../styles/CreatePlaylist.module.css";
 import axios from "axios";
 import close from "../assets/close.png";
+import { AuthContext } from "../contexts/AuthProvider";
 
 export const CreatePlaylist = () => {
-  const { create, setCreate, setList, list, account } = useContext(DataContext);
+  const { create, setCreate, setList, list } = useContext(DataContext);
+  const { user } = useContext(AuthContext);
 
   let name = useRef();
   let descref = useRef();
@@ -20,7 +22,7 @@ export const CreatePlaylist = () => {
         .post(baseUrl + "/playlists", {
           title: title,
           description: descref.current.value,
-          CreatorId: account.uid,
+          Creator: user._id,
         })
         .then((res) => {
           console.log(res.data);
@@ -33,19 +35,19 @@ export const CreatePlaylist = () => {
 
   return (
     <>
-      {!account && (
+      {!user && (
         <div
           className={
             create
-              ? style.container
+              ? style.container2
               : `${style.container}  ${style.displayNone}`
           }
           style={{ color: "white", paddingTop: "10vh" }}
         >
-          You must log in to your account before create playlist
+          You must log in to your user before create playlist
         </div>
       )}
-      {account && (
+      {user && (
         <div
           className={
             create

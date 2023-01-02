@@ -17,9 +17,7 @@ const playlistSchema = new Schema({
     type: Date,
     default: Date.now(),
   },
-  CreatorId: {
-    type: String,
-  },
+
   Creator: {
     type: Schema.Types.ObjectId,
     required: true,

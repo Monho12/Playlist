@@ -6,6 +6,6 @@ export * from "./Playlist";
 export * from "./Songs";
 export * from "./Track";
 export * from "./Tracks";
-export * from "./Login";
-export * from "./Signup";
+export * from "../pages/Login";
+export * from "../pages/Signup";
 export * from "./Profile"

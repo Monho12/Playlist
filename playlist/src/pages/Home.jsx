@@ -14,7 +14,7 @@ export const Home = () => {
           />
           <Link to="/explore">
             <button className={style.button} to="/explore">
-              Start Jingle
+              Start Listen
             </button>
           </Link>
         </div>

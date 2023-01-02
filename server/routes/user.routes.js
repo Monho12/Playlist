@@ -6,8 +6,8 @@ const router = experss.Router();
 router
   .post("/login", userController.loginUser)
   .get("/users", userController.getUsers)
-  .get("/users", userController.getUser)
-  .post("/users", userController.createUser)
+  .get("/users/:id", userController.getUser)
+  .post("/signup", userController.createUser)
   .put("/user/:id", () => {})
   .delete("/user/id", () => {});
 

@@ -4,11 +4,13 @@ import { Button } from "react-bootstrap";
 import axios from "axios";
 import { useContext, useState } from "react";
 import { DataContext } from "../contexts/DataProvider";
+import { AuthContext } from "../contexts/AuthProvider";
 
 export const Playlist = ({ index, _id, title, description }) => {
   const baseUrl = "http://localhost:5000";
 
-  const { list, account, setList } = useContext(DataContext);
+  const { list, setList } = useContext(DataContext);
+  const { user } = useContext(AuthContext);
   const deletePlaylist = () => {
     axios
       .delete(baseUrl + `/playlists/${_id}`)
@@ -21,7 +23,7 @@ export const Playlist = ({ index, _id, title, description }) => {
         console.log(err);
       });
   };
-  if (list[index].CreatorId == account.uid) {
+  if (list[index].Creator == user._id) {
     return (
       <div className={style.container}>
         <Link to={`/playlists/${_id}`} style={{ textDecoration: "none" }}>

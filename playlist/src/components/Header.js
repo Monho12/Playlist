@@ -1,10 +1,10 @@
 import style from "../styles/Header.module.css";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { DataContext } from "../contexts/DataProvider";
-
+import { AuthContext } from "../contexts/AuthProvider";
 export const Header = () => {
-  const { account } = useContext(DataContext);
+  const { user } = useContext(AuthContext);
+
   return (
     <div className={style.header}>
       <div className={style.btns}>
@@ -16,7 +16,7 @@ export const Header = () => {
             </div>
           </div>
         </div>
-        {!account && (
+        {!user && (
           <>
             <Link to="/signup">
               <button
@@ -36,9 +36,9 @@ export const Header = () => {
             </Link>
           </>
         )}
-        {account && (
+        {user && (
           <div>
-            <span>{account && account.email}</span>
+            <span>{user && user.username}</span>
           </div>
         )}
       </div>

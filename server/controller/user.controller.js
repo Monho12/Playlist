@@ -12,7 +12,7 @@ const getUsers = async (_req, res) => {
 };
 
 const getUser = async (req, res) => {
-  const result = await User.findbyID(req.params.id);
+  const result = await User.findById(req.params.id);
   res.send(result);
 };
 

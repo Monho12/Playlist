@@ -8,38 +8,41 @@ import { Songs } from "./components/Songs";
 import { About } from "./pages/About";
 import { Library } from "./pages/Library";
 import { Tracks } from "./components/Tracks";
-import { Login } from "./components/Login";
-import { Signup } from "./components";
+import { Login } from "./pages/Login";
+import { Signup } from "./pages/Signup";
 import { Profile } from "./components/Profile";
+import { AuthProvider } from "./contexts/AuthProvider";
 
 function App() {
   return (
-    <DataProvider>
-      <BrowserRouter>
-        <div className="App">
-          <Sidebar />
-          <div className="Container">
-            <Header />
-            <Routes>
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/profile/:id" element={<Profile />} />
-              <Route index element={<Home />} />
-              <Route path="/explore" element={<Explore />} />
-              <Route path="/album">
-                <Route path=":id" element={<Songs />} />
-              </Route>
-              <Route path="/library" element={<Library />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/playlists">
-                <Route path=":id" element={<Tracks />} />
-              </Route>
-            </Routes>
+    <BrowserRouter>
+      <AuthProvider>
+        <DataProvider>
+          <div className="App">
+            <Sidebar />
+            <div className="Container">
+              <Header />
+              <Routes>
+                <Route index element={<Home />} />
+                <Route path="/explore" element={<Explore />} />
+                <Route path="/album">
+                  <Route path=":id" element={<Songs />} />
+                </Route>
+                <Route path="/library" element={<Library />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/profile/:id" element={<Profile />} />
+                <Route path="/playlists">
+                  <Route path=":id" element={<Tracks />} />
+                </Route>
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} />
+              </Routes>
+            </div>
+            <CreatePlaylist />
           </div>
-          <CreatePlaylist />
-        </div>
-      </BrowserRouter>
-    </DataProvider>
+        </DataProvider>
+      </AuthProvider>
+    </BrowserRouter>
   );
 }
 
