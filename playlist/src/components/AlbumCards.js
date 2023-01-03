@@ -17,6 +17,7 @@ export const AlbumCards = ({ album }) => {
           </div>
         </div>
       </div>
+     
     </div>
   );
 };

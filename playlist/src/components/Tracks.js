@@ -13,6 +13,7 @@ export const Tracks = () => {
       setSongs([res.data.songs]);
     })();
   }, []);
+
   return (
     <>
       <h1>Songs</h1>
@@ -22,11 +23,8 @@ export const Tracks = () => {
             <div className={style.cardContainer}>
               <div className={style.songSection}>
                 <div className={style.trackName}>
-                  <div>Artist: {item.artist}</div>
+                  <div>Artist: {item.artist[0].name}</div>
                   <div style={{ fontWeight: "400" }}>Song: {item.name}</div>
-                  <div style={{ color: "grey", fontWeight: "500" }}>
-                    ID: {item._id}
-                  </div>
                 </div>
               </div>
             </div>

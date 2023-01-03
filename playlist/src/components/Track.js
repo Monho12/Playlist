@@ -1,11 +1,14 @@
 import style from "../styles/Songs.module.css";
 import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
+import { useContext } from "react";
+import { DataContext } from "../contexts/DataProvider";
+import { AddToPlaylist } from "./addToPlaylist";
 
 export const Track = ({ name, preview_url, index, artists, duration_ms }) => {
-  const [music, setMusic] = useState(new Audio(preview_url));
+  const [music, _setMusic] = useState(new Audio(preview_url));
   const [playing, setPlaying] = useState(false);
-
+  const { add, setAdd } = useContext(DataContext);
   function msToTime(duration) {
     var seconds = Math.floor((duration / 1000) % 60),
       minutes = Math.floor((duration / (1000 * 60)) % 60),
@@ -28,6 +31,10 @@ export const Track = ({ name, preview_url, index, artists, duration_ms }) => {
     }
   };
 
+  const addToPlaylist = () => {
+    setAdd(!add);
+  };
+
   return (
     <>
       <div className={style.cardContainer}>
@@ -43,8 +50,10 @@ export const Track = ({ name, preview_url, index, artists, duration_ms }) => {
         <div className={style.rightSection}>
           <div style={{ marginRight: "300px" }}>{msToTime(duration_ms)}</div>
           <Button onClick={Player}>{playing ? "Pause" : "Play"}</Button>
+          <Button onClick={() => addToPlaylist()}>Add to playlist</Button>
         </div>
       </div>
+      <AddToPlaylist />
     </>
   );
 };

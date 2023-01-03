@@ -1,8 +1,6 @@
-import { useState, useEffect, createContext, useContext } from "react";
+import { useState, useEffect, createContext } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
-import { AuthContext } from "./AuthProvider";
-import { Login } from "../components";
-import { useNavigate } from "react-router-dom";
 
 const CLIENT_ID = "e11d642ed1f642c789a106fb51132da3";
 const CLIENT_SECRET = "e7033b13995c49bbae01be2dfb2c5134";
@@ -20,6 +18,9 @@ export const DataProvider = (props) => {
   const [album, setAlbum] = useState("");
   const [list, setList] = useState([]);
   const [create, setCreate] = useState(false);
+  const [add, setAdd] = useState(true);
+  const [playlistId, setPlaylistId] = useState("");
+  const [songId, setSongId] = useState("");
 
   useEffect(() => {
     var authParameters = {
@@ -50,6 +51,14 @@ export const DataProvider = (props) => {
       setList(res.data);
     })();
   }, []);
+
+  const addToPlaylist = (index) => {
+    setAdd(!add);
+    axios.get("http://localhost:5000/songs").then((res) => {
+      console.log(res.data[index]._id);
+      setSongId(res.data[index]._id);
+    });
+  };
 
   async function search() {
     console.log("Search for " + searchInput);
@@ -124,6 +133,12 @@ export const DataProvider = (props) => {
         create,
         setCreate,
         setList,
+        add,
+        setAdd,
+        playlistId,
+        setPlaylistId,
+        addToPlaylist,
+        songId,
       }}
     >
       {props.children}
