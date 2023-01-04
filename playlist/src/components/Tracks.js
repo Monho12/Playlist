@@ -9,10 +9,9 @@ export const Tracks = () => {
   useEffect(() => {
     (async () => {
       const res = await axios.get("http://localhost:5000/playlists/" + id);
-      console.log(res.data.songs[0]);
       setSongs([res.data.songs]);
     })();
-  }, []);
+  }, [songs]);
 
   return (
     <>
@@ -21,11 +20,9 @@ export const Tracks = () => {
         return thing.map((item, index) => {
           return (
             <div className={style.cardContainer}>
-              <div className={style.songSection}>
-                <div className={style.trackName}>
-                  <div>Artist: {item.artist[0].name}</div>
-                  <div style={{ fontWeight: "400" }}>Song: {item.name}</div>
-                </div>
+              <div className={style.trackName}>
+                <div>Artist: {item.artist[0].name} </div>
+                <div style={{ fontWeight: "400" }}>Song: {item.name}</div>
               </div>
             </div>
           );

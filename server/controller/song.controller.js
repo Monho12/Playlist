@@ -16,4 +16,10 @@ const getSong = async (req, res) => {
   res.send(result);
 };
 
-module.exports = { createSong, getSongs, getSong };
+const deleteSong = async (req, res) => {
+  const id = req.params.id;
+  const result = await Song.findByIdAndDelete(id);
+  res.send(result);
+};
+
+module.exports = { createSong, getSongs, getSong , deleteSong };

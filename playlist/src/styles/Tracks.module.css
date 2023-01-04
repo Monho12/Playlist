@@ -1,15 +1,5 @@
 .cardContainer {
-  display: flex;
-  align-items: center;
   padding: 10px;
-  padding-right: 40px;
-}
-
-.songSection {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  font-weight: 300;
 }
 
 .trackName {

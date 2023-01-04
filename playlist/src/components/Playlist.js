@@ -17,7 +17,7 @@ export const Playlist = ({ index, _id, title, description }) => {
   const deletePlaylist = () => {
     axios
       .delete(baseUrl + `/playlists/${_id}`)
-      .then((res) => {
+      .then(() => {
         axios.get(baseUrl + "/playlists").then((res) => {
           setList(res.data);
         });
@@ -32,25 +32,25 @@ export const Playlist = ({ index, _id, title, description }) => {
         <Link to={`/playlists/${_id}`} style={{ textDecoration: "none" }}>
           <div className={style.container}>
             <div className={style.card}>
-              <div style={{height : "200px"}}>
+              <div style={{ height: "150px" }}>
                 <Card.Img src={playlist} style={{ borderRadius: "5px" }} />
                 <img src={play} className={style.play} />
               </div>
               <div className={style.albumName}>
                 <div>{title}</div>
                 <div style={{ color: "#A7A7CC", fontWeight: "400" }}>
-                  • {description}
+                  {description}
                 </div>
               </div>
             </div>
           </div>
         </Link>
-        <Button
+        {/* <Button
           onClick={deletePlaylist}
-          style={{ position: "absolute", bottom: "15px", left: "57px" }}
+          style={{ position: "absolute", bottom: "55px", left: "57px" }}
         >
           Delete Playlist
-        </Button>
+        </Button> */}
       </div>
     );
   }

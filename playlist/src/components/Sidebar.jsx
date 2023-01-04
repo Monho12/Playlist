@@ -11,7 +11,7 @@ import log from "../assets/Spotify.png";
 import profile from "../assets/user.png";
 import { AuthContext } from "../contexts/AuthProvider";
 export const Sidebar = () => {
-  const { list, create, setCreate, account } = useContext(DataContext);
+  const { list, create, setCreate } = useContext(DataContext);
   const { user } = useContext(AuthContext);
 
   return (

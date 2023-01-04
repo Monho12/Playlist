@@ -5,10 +5,9 @@ import style from "../styles/AddToPlaylist.module.css";
 import { Button } from "react-bootstrap";
 import close from "../assets/close.png";
 import axios from "axios";
-import { useEffect } from "react";
 
 export const AddToPlaylist = (index) => {
-  const { add, setAdd, list, playlistId, setPlaylistId, songId } =
+  const { add, setAdd, list, playlistId, setPlaylistId, songId, setList } =
     useContext(DataContext);
   const { user } = useContext(AuthContext);
   const [check, setCheck] = useState(true);
@@ -17,6 +16,7 @@ export const AddToPlaylist = (index) => {
     if (check) {
       console.log("playlistID: ", list[index]._id);
       setPlaylistId(list[index]._id);
+      setCheck(false)
     } else {
       setPlaylistId();
       setCheck(true);
@@ -29,6 +29,7 @@ export const AddToPlaylist = (index) => {
       .then((res) => {
         console.log(res.data);
       });
+    setAdd(false);
   };
 
   return (
@@ -46,7 +47,7 @@ export const AddToPlaylist = (index) => {
       {user && (
         <div
           className={
-            !add ? style.container : `${style.container}  ${style.displayNone}`
+            add ? style.container : `${style.container}  ${style.displayNone}`
           }
         >
           <div onClick={() => setAdd(!add)} className={style.close}>
@@ -63,7 +64,7 @@ export const AddToPlaylist = (index) => {
                   <>
                     {list[index].Creator == user._id && (
                       <div className={style.div}>
-                        <Button onClick={() => Check(index)} />
+                        <input type="checkbox" onClick={() => Check(index)} />
                         {item.title}
                       </div>
                     )}

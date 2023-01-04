@@ -1,5 +1,4 @@
 import { useState, useEffect, createContext } from "react";
-import { useParams } from "react-router-dom";
 import axios from "axios";
 
 const CLIENT_ID = "e11d642ed1f642c789a106fb51132da3";

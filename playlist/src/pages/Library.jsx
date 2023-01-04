@@ -10,8 +10,6 @@ export const Library = () => {
   const { list } = useContext(DataContext);
   const { user } = useContext(AuthContext);
 
-  console.log(list);
-
   return (
     <div className={style.container}>
       <div className={style.part}>
@@ -30,9 +28,9 @@ export const Library = () => {
               {user && (
                 <>
                   {list[index].Creator == user._id && (
-                    <Link style={{ textDecoration: "none" }}>
+                    <>
                       <Playlist {...item} index={index} key={index} />
-                    </Link>
+                    </>
                   )}
                 </>
               )}
