@@ -17,7 +17,7 @@ export const DataProvider = (props) => {
   const [album, setAlbum] = useState("");
   const [list, setList] = useState([]);
   const [create, setCreate] = useState(false);
-  const [add, setAdd] = useState(true);
+  const [add, setAdd] = useState(false);
   const [playlistId, setPlaylistId] = useState("");
   const [songId, setSongId] = useState("");
 

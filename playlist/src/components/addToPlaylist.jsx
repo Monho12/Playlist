@@ -7,7 +7,7 @@ import close from "../assets/close.png";
 import axios from "axios";
 
 export const AddToPlaylist = (index) => {
-  const { add, setAdd, list, playlistId, setPlaylistId, songId, setList } =
+  const { add, setAdd, list, playlistId, setPlaylistId, songId } =
     useContext(DataContext);
   const { user } = useContext(AuthContext);
   const [check, setCheck] = useState(true);
@@ -16,7 +16,7 @@ export const AddToPlaylist = (index) => {
     if (check) {
       console.log("playlistID: ", list[index]._id);
       setPlaylistId(list[index]._id);
-      setCheck(false)
+      setCheck(false);
     } else {
       setPlaylistId();
       setCheck(true);
@@ -30,6 +30,7 @@ export const AddToPlaylist = (index) => {
         console.log(res.data);
       });
     setAdd(false);
+    alert("added to your playlist");
   };
 
   return (
@@ -50,7 +51,7 @@ export const AddToPlaylist = (index) => {
             add ? style.container : `${style.container}  ${style.displayNone}`
           }
         >
-          <div onClick={() => setAdd(!add)} className={style.close}>
+          <div onClick={() => setAdd(false)} className={style.close}>
             <img src={close} />
           </div>
           <div style={{ color: "white", fontSize: "28px" }}>

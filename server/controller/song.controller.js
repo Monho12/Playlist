@@ -12,8 +12,13 @@ const getSongs = async (req, res) => {
 };
 
 const getSong = async (req, res) => {
-  const result = await Song.findById(req.params.id).populate("artist");
-  res.send(result);
+  try {
+    const result = await Song.findById(req.params.id).populate("artist");
+    res.send(result);
+  } catch (err) {
+    res.status(500).send(err);
+    res.send(err.message);
+  }
 };
 
 const deleteSong = async (req, res) => {
@@ -22,4 +27,4 @@ const deleteSong = async (req, res) => {
   res.send(result);
 };
 
-module.exports = { createSong, getSongs, getSong , deleteSong };
+module.exports = { createSong, getSongs, getSong, deleteSong };

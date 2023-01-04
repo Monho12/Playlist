@@ -45,12 +45,12 @@ export const Playlist = ({ index, _id, title, description }) => {
             </div>
           </div>
         </Link>
-        {/* <Button
+        <Button
           onClick={deletePlaylist}
           style={{ position: "absolute", bottom: "55px", left: "57px" }}
         >
           Delete Playlist
-        </Button> */}
+        </Button>
       </div>
     );
   }
