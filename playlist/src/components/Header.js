@@ -40,7 +40,7 @@ export const Header = () => {
         {user && (
           <div className={style.profile}>
             <img src={pfp} style={{ height: "30px", width: "30px" }} />
-            <div>{user && user.username}</div>
+            <div>{user.username}</div>
           </div>
         )}
       </div>

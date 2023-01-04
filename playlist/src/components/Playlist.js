@@ -10,15 +10,13 @@ import { Card } from "react-bootstrap";
 import play from "../assets/Play.png";
 
 export const Playlist = ({ index, _id, title, description }) => {
-  const baseUrl = "http://localhost:5000";
-
   const { list, setList } = useContext(DataContext);
   const { user } = useContext(AuthContext);
   const deletePlaylist = () => {
     axios
-      .delete(baseUrl + `/playlists/${_id}`)
+      .delete("http://localhost:5000" + `/playlists/${_id}`)
       .then(() => {
-        axios.get(baseUrl + "/playlists").then((res) => {
+        axios.get("http://localhost:5000" + "/playlists").then((res) => {
           setList(res.data);
         });
       })

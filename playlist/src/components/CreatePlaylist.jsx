@@ -11,26 +11,24 @@ export const CreatePlaylist = () => {
 
   let name = useRef();
   let descref = useRef();
-  const baseUrl = "http://localhost:5000";
 
   const setValue = () => {
     const title = name.current.value;
     console.log(name.current.value);
     setCreate(!create);
-    if (title)
-      axios
-        .post(baseUrl + "/playlists", {
-          title: title,
-          description: descref.current.value,
-          Creator: user._id,
-        })
-        .then((res) => {
-          console.log(res.data);
-          setList([...list, res.data]);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+    axios
+      .post("http://localhost:5000/playlists", {
+        title: title,
+        description: descref.current.value,
+        Creator: user._id,
+      })
+      .then((res) => {
+        console.log(res.data);
+        setList([...list, res.data]);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
