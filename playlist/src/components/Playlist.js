@@ -1,6 +1,6 @@
 import style from "../styles/Playlist.module.css";
 import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import trsh from "../assets/trsh.png";
 import axios from "axios";
 import { useContext, useState } from "react";
 import { DataContext } from "../contexts/DataProvider";
@@ -16,6 +16,7 @@ export const Playlist = ({ index, _id, title, description }) => {
     axios
       .delete("http://localhost:5000" + `/playlists/${_id}`)
       .then(() => {
+        console.log("Deleted");
         axios.get("http://localhost:5000" + "/playlists").then((res) => {
           setList(res.data);
         });
@@ -27,8 +28,8 @@ export const Playlist = ({ index, _id, title, description }) => {
   if (list[index].Creator == user._id) {
     return (
       <div className={style.container}>
-        <Link to={`/playlists/${_id}`} style={{ textDecoration: "none" }}>
-          <div className={style.container}>
+        <div className={style.container}>
+          <Link to={`/playlists/${_id}`} style={{ textDecoration: "none" }}>
             <div className={style.card}>
               <div style={{ height: "150px" }}>
                 <Card.Img src={playlist} style={{ borderRadius: "5px" }} />
@@ -41,14 +42,9 @@ export const Playlist = ({ index, _id, title, description }) => {
                 </div>
               </div>
             </div>
-          </div>
-        </Link>
-        <Button
-          onClick={deletePlaylist}
-          style={{ position: "absolute", bottom: "55px", left: "57px" }}
-        >
-          Delete Playlist
-        </Button>
+          </Link>
+          <img src={trsh} onClick={deletePlaylist} className={style.trash} />
+        </div>
       </div>
     );
   }

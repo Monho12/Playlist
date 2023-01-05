@@ -12,8 +12,8 @@ export const Header = () => {
         <div className={style.news}>
           <div className={style.inner}>
             <div className={style.marqueeStyle}>
-              Thanks for listening notSpotify®. Also exclusive markiplier nudes
-              for sale! Special thanks to duuree for supporting LGBTQ+!!.
+              Thanks for listening notSpotify®. Only available Drake and Joji's
+              songs.
             </div>
           </div>
         </div>

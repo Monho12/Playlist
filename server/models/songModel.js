@@ -5,6 +5,9 @@ const songSchema = new Schema({
     type: String,
     required: true,
   },
+  url: {
+    type: String,
+  },
   creator: {
     type: Schema.Types.ObjectId,
     ref: "User",

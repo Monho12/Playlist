@@ -3,8 +3,9 @@ import { useContext } from "react";
 import style from "../styles/Library.module.css";
 import { Playlist } from "../components/Playlist";
 import { Link } from "react-router-dom";
-import { Row } from "react-bootstrap";
+import { Button, Row } from "react-bootstrap";
 import { AuthContext } from "../contexts/AuthProvider";
+import axios from "axios";
 
 export const Library = () => {
   const { list } = useContext(DataContext);
@@ -29,7 +30,9 @@ export const Library = () => {
                 <>
                   {list[index].Creator == user._id && (
                     <>
-                      <Playlist {...item} index={index} key={index} />
+                      <div>
+                        <Playlist {...item} index={index} key={index} />
+                      </div>
                     </>
                   )}
                 </>

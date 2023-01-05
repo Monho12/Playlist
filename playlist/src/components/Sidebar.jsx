@@ -82,7 +82,7 @@ export const Sidebar = () => {
             <>
               {user && (
                 <>
-                  {list[index].Creator == user._id && (
+                  {list[index].Creator === user._id && (
                     <Link
                       style={{ textDecoration: "none", color: "wheat" }}
                       to={`/playlists/${item._id}`}

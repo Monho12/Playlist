@@ -1,61 +1,10 @@
 .container {
   display: flex;
-  height: 90vh;
-  overflow-y: scroll;
+  justify-content: center;
+  align-items: center;
 }
 
 .innerContainer {
-  display: flex;
-  padding: 50px 0 0 50px;
+  padding: 50px;
   position: relative;
-  height: 90vh;
-  gap: 30px;
-  width: 100%;
-}
-
-.img {
-  width: 40vw;
-  height: 50vh;
-}
-
-.button {
-  position: absolute;
-  bottom: 60px;
-  right: 28vw;
-  border-radius: 40px;
-  outline: none;
-  border: none;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 23px;
-  text-align: center;
-  letter-spacing: 0.14em;
-  background-color: #3b3e68;
-  color: white;
-  width: 232px;
-  height: 62px;
-  transition: 300ms;
-}
-.button:hover {
-  background-color: #555994;
-  color: white;
-}
-
-.cardContainer {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  padding-right: 40px;
-}
-
-.songSection {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  font-weight: 300;
-}
-
-.trackName {
-  display: flex;
-  flex-direction: column;
 }

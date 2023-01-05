@@ -2,29 +2,34 @@ const { Song } = require("../models/songModel");
 
 const createSong = async (req, res) => {
   const body = req.body;
-  const result = await new Song(body).save();
-  res.send(result);
+  try {
+    const result = await new Song(body).save();
+    res.send(result);
+  } catch (error) {}
 };
 
 const getSongs = async (req, res) => {
-  const result = await Song.find({}).populate("artist");
-  res.send(result);
+  try {
+    const result = await Song.find({}).populate("artist");
+    res.send(result);
+  } catch (error) {}
 };
 
 const getSong = async (req, res) => {
   try {
     const result = await Song.findById(req.params.id).populate("artist");
     res.send(result);
-  } catch (err) {
-    res.status(500).send(err);
-    res.send(err.message);
-  }
+  } catch (err) {}
 };
 
 const deleteSong = async (req, res) => {
   const id = req.params.id;
-  const result = await Song.findByIdAndDelete(id);
-  res.send(result);
+  try {
+    const result = await Song.findByIdAndDelete(id);
+    res.send(result);
+  } catch (error) {}
 };
 
-module.exports = { createSong, getSongs, getSong, deleteSong };
+const addToSong = async (req, res) => {};
+
+module.exports = { createSong, getSongs, getSong, deleteSong, addToSong };
