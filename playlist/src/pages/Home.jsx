@@ -11,11 +11,11 @@ export const Home = () => {
     <div className={style.container}>
       <div className={style.playlistSection}>
         <h1>Trending Artists</h1>
-        <Row className="m-2 row row-cols-6">
+        <div className={style.container2}>
           {pro.map((item, index) => {
             return <ArtistPL {...item} key={index} />;
           })}
-        </Row>
+        </div>
       </div>
     </div>
   );

@@ -17,9 +17,11 @@ export const Playlist = ({ index, _id, title, description }) => {
       .delete("https://notspotify.onrender.com" + `/playlists/${_id}`)
       .then(() => {
         console.log("Deleted");
-        axios.get("https://notspotify.onrender.com" + "/playlists").then((res) => {
-          setList(res.data);
-        });
+        axios
+          .get("https://notspotify.onrender.com" + "/playlists")
+          .then((res) => {
+            setList(res.data);
+          });
       })
       .catch((err) => {
         console.log(err);

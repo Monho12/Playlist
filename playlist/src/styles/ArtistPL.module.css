@@ -13,6 +13,7 @@
   background-color: #47475c;
   flex-direction: column;
   transition: 200ms;
+  flex-wrap: wrap;
 }
 
 .card:hover {

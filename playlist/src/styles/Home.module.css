@@ -2,6 +2,12 @@
   padding: 50px;
   height: 75vh;
 }
+.container2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 
 .playlistSection {
   padding: 20px;

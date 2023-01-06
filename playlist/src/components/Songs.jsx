@@ -5,20 +5,9 @@ import { DataContext } from "../contexts/DataProvider";
 import { AddToPlaylist } from "./addToPlaylist";
 import { AuthContext } from "../contexts/AuthProvider";
 
-export const Songs = ({ artist, name, index, url, item }) => {
-  const [music, _setMusic] = useState(new Audio(url));
-  const [playing, setPlaying] = useState(false);
+export const Songs = ({ artist, name, index }) => {
   const { addToPlaylist } = useContext(DataContext);
   const { user } = useContext(AuthContext);
-
-  const Player = () => {
-    setPlaying(!playing);
-    if (music.paused) {
-      music.play();
-    } else {
-      music.pause();
-    }
-  };
 
   return (
     <div className={style.cardContainer}>
@@ -29,7 +18,6 @@ export const Songs = ({ artist, name, index, url, item }) => {
         </div>
         {user && (
           <>
-            <Button onClick={Player}>{playing ? "Pause" : "Play"}</Button>
             <Button onClick={() => addToPlaylist(index)}>
               Add to playlist
             </Button>

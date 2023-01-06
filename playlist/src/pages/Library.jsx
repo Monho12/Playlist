@@ -19,11 +19,11 @@ export const Library = () => {
           </div>
         )}
       </div>
-
-      <Row className="mx-2 row row-cols-6">
+      <div className={style.container2}>
+        {/* <Row className="mx-2 row row-cols-6"> */}
         {list.map((item, index) => {
           return (
-            <>
+            <div key={index}>
               {user && (
                 <>
                   {list[index].Creator == user._id && (
@@ -35,10 +35,11 @@ export const Library = () => {
                   )}
                 </>
               )}
-            </>
+            </div>
           );
         })}
-      </Row>
+        {/* </Row> */}
+      </div>
     </div>
   );
 };

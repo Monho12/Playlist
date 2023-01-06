@@ -8,7 +8,9 @@ export const Tracks = () => {
 
   useEffect(() => {
     (async () => {
-      const res = await axios.get("https://notspotify.onrender.com/playlists/" + id);
+      const res = await axios.get(
+        "https://notspotify.onrender.com/playlists/" + id
+      );
       setSongs([res.data.songs]);
     })();
   }, [songs]);
@@ -20,7 +22,7 @@ export const Tracks = () => {
         return thing.map((item, index) => {
           return (
             <div>
-              <Songs {...item} index={index} />
+              <Songs {...item} index={index} key={index} />
             </div>
           );
         });

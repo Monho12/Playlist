@@ -4,6 +4,13 @@
   overflow-y: scroll;
   flex-direction: column;
 }
+
+.container2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 .part {
   margin-top: 30px;
   display: flex;

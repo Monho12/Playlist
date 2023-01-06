@@ -61,7 +61,7 @@ export const AddToPlaylist = (index) => {
 
           {list.map((item, index) => {
             return (
-              <>
+              <div key={index}>
                 {user && (
                   <>
                     {list[index].Creator === user._id && (
@@ -72,7 +72,7 @@ export const AddToPlaylist = (index) => {
                     )}
                   </>
                 )}
-              </>
+              </div>
             );
           })}
 

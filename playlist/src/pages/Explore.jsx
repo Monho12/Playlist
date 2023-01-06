@@ -41,6 +41,7 @@ export const Explore = () => {
         {songs.map(
           (item, index) =>
             ((searchInput &&
+              item.name &&
               item.name
                 .toLowerCase()
                 .includes(searchInput && searchInput.toLowerCase())) ||

@@ -3,7 +3,6 @@
   display: flex;
   gap: 5vh;
   position: relative;
-  z-index: 1;
 }
 
 .card {
@@ -16,6 +15,9 @@
   background-color: #47475c;
   flex-direction: column;
   transition: 200ms;
+  margin: 10px;
+  position: relative;
+  top: 0;
 }
 
 .card:hover {
@@ -48,10 +50,8 @@
 }
 
 .trash {
-  z-index: 9999;
   position: absolute;
-  bottom: 50px;
-  right: 28px;
+  bottom: 60px;
+  right: 37px;
   cursor: pointer;
-  opacity: 1;
 }

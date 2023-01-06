@@ -23,7 +23,7 @@ export const ArtistSongs = () => {
       {artist.map((item, index) => {
         if (id === item._id) {
           return (
-            <div >
+            <div key={index}>
               <img
                 src={item.image[1]}
                 style={{ width: "83vw", height: "50vh" }}
@@ -36,7 +36,7 @@ export const ArtistSongs = () => {
       {songs.map((item, index) => {
         if (id === item.artist[0]._id) {
           return (
-            <div>
+            <div key={index}>
               <Songs {...item} index={index} />
             </div>
           );
