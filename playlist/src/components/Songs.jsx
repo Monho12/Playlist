@@ -3,12 +3,13 @@ import { Button } from "react-bootstrap";
 import { useContext, useState } from "react";
 import { DataContext } from "../contexts/DataProvider";
 import { AddToPlaylist } from "./addToPlaylist";
-import { ArtistPL } from "./ArtistPL";
+import { AuthContext } from "../contexts/AuthProvider";
 
 export const Songs = ({ artist, name, index, url, item }) => {
   const [music, _setMusic] = useState(new Audio(url));
   const [playing, setPlaying] = useState(false);
   const { addToPlaylist } = useContext(DataContext);
+  const { user } = useContext(AuthContext);
 
   const Player = () => {
     setPlaying(!playing);
@@ -25,9 +26,16 @@ export const Songs = ({ artist, name, index, url, item }) => {
           <div>Artist: {artist[0].name}</div>
           <div style={{ fontWeight: "400" }}>Song: {name && name}</div>
         </div>
-        <Button onClick={Player}>{playing ? "Pause" : "Play"}</Button>
-        <Button onClick={() => addToPlaylist(index)}>Add to playlist</Button>
+        {user && (
+          <>
+            <Button onClick={Player}>{playing ? "Pause" : "Play"}</Button>
+            <Button onClick={() => addToPlaylist(index)}>
+              Add to playlist
+            </Button>
+          </>
+        )}
       </div>
+
       <AddToPlaylist />
     </div>
   );

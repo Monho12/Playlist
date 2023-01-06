@@ -7,8 +7,7 @@ import { DataContext } from "../contexts/DataProvider";
 
 export const Explore = () => {
   const [songs, setSongs] = useState([]);
-  const { searchInput, setSearchInput , pro } = useContext(DataContext);
- 
+  const { searchInput, setSearchInput, pro } = useContext(DataContext);
 
   useEffect(() => {
     axios.get("http://localhost:5000/songs").then((res) => {
@@ -31,6 +30,7 @@ export const Explore = () => {
         {pro.map((item, index) => {
           return (
             searchInput &&
+            item.name &&
             item.name
               .toLowerCase()
               .includes(searchInput && searchInput.toLowerCase()) && (
