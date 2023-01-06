@@ -9,6 +9,8 @@ export const Songs = ({ artist, name, index }) => {
   const { addToPlaylist } = useContext(DataContext);
   const { user } = useContext(AuthContext);
 
+  console.log(artist[0].name, name);
+
   return (
     <div className={style.cardContainer}>
       <div className={style.songSection}>

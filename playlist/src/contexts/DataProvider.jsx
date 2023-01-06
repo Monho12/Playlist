@@ -12,30 +12,30 @@ export const DataProvider = (props) => {
   const [playlistId, setPlaylistId] = useState("");
   const [songId, setSongId] = useState("");
   const [artist, setArtist] = useState([]);
-  const [pro, setPro] = useState([]);
+  const [songs, setSongs] = useState([]);
 
   useEffect(() => {
     (async () => {
-      const res = await axios.get("https://notspotify.onrender.com/playlists");
+      const res = await axios.get("http://localhost:5000/playlists");
       console.log(res.data);
       setList(res.data);
     })();
 
     (async () => {
-      const res = await axios.get("https://notspotify.onrender.com/artists");
+      const res = await axios.get("http://localhost:5000/artists");
       console.log(res.data);
       setArtist(res.data);
     })();
 
-    axios.get("https://notspotify.onrender.com/artists").then((res) => {
+    axios.get("http://localhost:5000/songs").then((res) => {
       console.log(res.data);
-      setPro(res.data);
+      setSongs(res.data);
     });
   }, []);
 
   const addToPlaylist = (index) => {
     setAdd(!add);
-    axios.get("https://notspotify.onrender.com/songs").then((res) => {
+    axios.get("http://localhost:5000/songs").then((res) => {
       console.log(res.data[index]._id);
       setSongId(res.data[index]._id);
     });
@@ -59,7 +59,7 @@ export const DataProvider = (props) => {
         addToPlaylist,
         songId,
         artist,
-        pro
+        songs,
       }}
     >
       {props.children}

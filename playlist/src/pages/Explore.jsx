@@ -6,15 +6,8 @@ import { ArtistPL, Songs } from "../components";
 import { DataContext } from "../contexts/DataProvider";
 
 export const Explore = () => {
-  const [songs, setSongs] = useState([]);
-  const { searchInput, setSearchInput, pro } = useContext(DataContext);
-
-  useEffect(() => {
-    axios.get("https://notspotify.onrender.com/songs").then((res) => {
-      console.log(res.data);
-      setSongs(res.data);
-    });
-  }, []);
+  const { searchInput, setSearchInput, artist, songs } =
+    useContext(DataContext);
 
   return (
     <div className={style.container}>
@@ -27,7 +20,7 @@ export const Explore = () => {
         />
       </div>
       <div className={style.songSecion}>
-        {pro.map((item, index) => {
+        {artist.map((item, index) => {
           return (
             searchInput &&
             item.name &&
@@ -38,19 +31,13 @@ export const Explore = () => {
             )
           );
         })}
-        {songs.map(
-          (item, index) =>
-            ((searchInput &&
-              item.name &&
-              item.name
-                .toLowerCase()
-                .includes(searchInput && searchInput.toLowerCase())) ||
-              item.artist[0].name
-                .toLowerCase()
-                .includes(searchInput && searchInput.toLowerCase())) && (
-              <Songs {...item} index={index} key={item.name} />
-            )
-        )}
+        {songs.map((item, index) => {
+          return (
+            <div>
+              <Songs key={index} {...item} />
+            </div>
+          );
+        })}
       </div>
       <AddToPlaylist />
     </div>

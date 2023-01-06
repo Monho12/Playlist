@@ -12,7 +12,7 @@ export const ArtistSongs = () => {
   const { artist } = useContext(DataContext);
 
   useEffect(() => {
-    axios.get("https://notspotify.onrender.com/songs").then((res) => {
+    axios.get("http://localhost:5000/songs").then((res) => {
       console.log(res.data);
       setSongs(res.data);
     });
@@ -33,7 +33,7 @@ export const ArtistSongs = () => {
           );
         }
       })}
-      {songs.map((item, index) => {
+      {/* {songs.map((item, index) => {
         if (id === item.artist[0]._id) {
           return (
             <div key={index}>
@@ -41,7 +41,7 @@ export const ArtistSongs = () => {
             </div>
           );
         }
-      })}
+      })} */}
     </div>
   );
 };

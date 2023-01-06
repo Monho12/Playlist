@@ -24,7 +24,7 @@ export const AddToPlaylist = (index) => {
 
   const push = () => {
     axios
-      .put("https://notspotify.onrender.com/playlists/" + playlistId, {
+      .put("http://localhost:5000/playlists/" + playlistId, {
         id: songId,
       })
       .then((res) => {

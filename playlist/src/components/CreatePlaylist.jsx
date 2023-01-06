@@ -17,7 +17,7 @@ export const CreatePlaylist = () => {
     console.log(name.current.value);
     setCreate(!create);
     axios
-      .post("https://notspotify.onrender.com/playlists", {
+      .post("http://localhost:5000/playlists", {
         title: title,
         description: descref.current.value,
         Creator: user._id,

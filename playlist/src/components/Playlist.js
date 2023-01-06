@@ -14,11 +14,11 @@ export const Playlist = ({ index, _id, title, description }) => {
   const { user } = useContext(AuthContext);
   const deletePlaylist = () => {
     axios
-      .delete("https://notspotify.onrender.com" + `/playlists/${_id}`)
+      .delete("http://localhost:5000" + `/playlists/${_id}`)
       .then(() => {
         console.log("Deleted");
         axios
-          .get("https://notspotify.onrender.com" + "/playlists")
+          .get("http://localhost:5000" + "/playlists")
           .then((res) => {
             setList(res.data);
           });
