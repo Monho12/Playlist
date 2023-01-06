@@ -5,9 +5,12 @@ const songSchema = new Schema({
     type: String,
     required: true,
   },
-  url: {
-    type: String,
-  },
+  url: [
+    {
+      type: String,
+      ref : "url"
+    },
+  ],
   creator: {
     type: Schema.Types.ObjectId,
     ref: "User",

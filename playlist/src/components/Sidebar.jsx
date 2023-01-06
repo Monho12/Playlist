@@ -10,6 +10,7 @@ import hom from "../assets/Home.png";
 import log from "../assets/Spotify.png";
 import profile from "../assets/user.png";
 import { AuthContext } from "../contexts/AuthProvider";
+
 export const Sidebar = () => {
   const { list, create, setCreate } = useContext(DataContext);
   const { user } = useContext(AuthContext);

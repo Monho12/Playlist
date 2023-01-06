@@ -1,0 +1,12 @@
+.container {
+    position: relative;
+    margin: 30px;
+}
+
+.text {
+    position: absolute;
+    top: 0;
+    font-size: 88px;
+    color: darkorchid;
+    padding: 20px;
+}

@@ -1,7 +1,6 @@
 .container {
   display: flex;
   flex-direction: column;
-  height: 90vh;
 }
 
 .inputSection {
@@ -17,38 +16,19 @@
   font-weight: 500;
 }
 
-.profileSection {
-  display: flex;
-  width: 425px;
-  height: 200px;
-  align-items: center;
-  background-color: #47475c;
-  border-radius: 15px;
-  padding: 25px;
-  margin: 40px;
-  transition: 200ms;
-  gap: 5%;
-}
-
-.profileSection:hover {
-  background-color: #676786;
-  transition: 200ms;
-}
-
 .img {
   width: 135px;
   height: 145px;
   border-radius: 50%;
 }
 
-.name {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
 .cardSection {
   height: 88vh;
+}
+
+.songSection {
+  overflow-y: scroll;
+  height: 80vh;
 }
 
 .typeDesign {
@@ -58,21 +38,4 @@
   padding: 8px;
   width: fit-content;
   font-size: 14px;
-}
-
-.cardContainer {
-  padding: 10px;
-  display: flex;
-}
-
-.songSection {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  font-weight: 300;
-}
-
-.trackName {
-  display: flex;
-  flex-direction: column;
 }

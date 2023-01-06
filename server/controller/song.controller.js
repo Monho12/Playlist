@@ -30,6 +30,15 @@ const deleteSong = async (req, res) => {
   } catch (error) {}
 };
 
-const addToSong = async (req, res) => {};
+const addUrlToSong = async (req, res) => {
+  const songId = req.params.id;
+  const urlId = req.body.url;
+  try {
+    const song = await Song.findById(songId);
+    song.url.push(urlId);
+    await song.save();
+    res.send(song);
+  } catch (error) {}
+};
 
-module.exports = { createSong, getSongs, getSong, deleteSong, addToSong };
+module.exports = { createSong, getSongs, getSong, deleteSong, addUrlToSong };

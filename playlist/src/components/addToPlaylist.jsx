@@ -2,15 +2,23 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../contexts/AuthProvider";
 import { DataContext } from "../contexts/DataProvider";
 import style from "../styles/AddToPlaylist.module.css";
-import { Button } from "react-bootstrap";
 import close from "../assets/close.png";
 import axios from "axios";
 
 export const AddToPlaylist = (index) => {
-  const { add, setAdd, list, playlistId, setPlaylistId, songId } =
-    useContext(DataContext);
+  const {
+    add,
+    setAdd,
+    list,
+    playlistId,
+    setPlaylistId,
+    songId,
+
+    setAdded,
+  } = useContext(DataContext);
   const { user } = useContext(AuthContext);
   const [check, setCheck] = useState(true);
+  const [preId, setPreId] = useState([]);
 
   const Check = (index) => {
     if (check) {
@@ -27,7 +35,7 @@ export const AddToPlaylist = (index) => {
     axios
       .put("http://localhost:5000/playlists/" + playlistId, { id: songId })
       .then((res) => {
-        console.log(res.data);
+        console.log(res.data._id);
       });
     setAdd(false);
     alert("added to your playlist");
@@ -52,7 +60,7 @@ export const AddToPlaylist = (index) => {
           }
         >
           <div onClick={() => setAdd(false)} className={style.close}>
-            <img src={close} />
+            <img src={close} alt="closeImg" />
           </div>
           <div style={{ color: "white", fontSize: "28px" }}>
             Choose your playlist
@@ -63,7 +71,7 @@ export const AddToPlaylist = (index) => {
               <>
                 {user && (
                   <>
-                    {list[index].Creator == user._id && (
+                    {list[index].Creator === user._id && (
                       <div className={style.div}>
                         <input type="checkbox" onClick={() => Check(index)} />
                         {item.title}

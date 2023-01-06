@@ -1,14 +1,14 @@
 import style from "../styles/Explore.module.css";
-import { DataContext } from "../contexts/DataProvider";
-import { useContext, useState, useEffect } from "react";
-import { Button } from "react-bootstrap";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { AddToPlaylist } from "../components/addToPlaylist";
+import { ArtistPL, Songs } from "../components";
+import { DataContext } from "../contexts/DataProvider";
 
 export const Explore = () => {
   const [songs, setSongs] = useState([]);
-  const { addToPlaylist } = useContext(DataContext);
-  const [searchInput, setSearchInput] = useState(null);
+  const { searchInput, setSearchInput , pro } = useContext(DataContext);
+ 
 
   useEffect(() => {
     axios.get("http://localhost:5000/songs").then((res) => {
@@ -24,30 +24,30 @@ export const Explore = () => {
           className={style.input}
           placeholder="Search ur favorite artist or songs"
           type="input"
-          onChange={(event) => setSearchInput(event.target.value)}
+          onChange={(e) => setSearchInput(e.target.value)}
         />
       </div>
-      <div className={style.songs}>
+      <div className={style.songSecion}>
+        {pro.map((item, index) => {
+          return (
+            searchInput &&
+            item.name
+              .toLowerCase()
+              .includes(searchInput && searchInput.toLowerCase()) && (
+              <ArtistPL {...item} key={index} />
+            )
+          );
+        })}
         {songs.map(
           (item, index) =>
-            searchInput &&
-            (item.name
-              .toLowerCase()
-              .includes(searchInput && searchInput.toLowerCase()) ||
+            ((searchInput &&
+              item.name
+                .toLowerCase()
+                .includes(searchInput && searchInput.toLowerCase())) ||
               item.artist[0].name
                 .toLowerCase()
                 .includes(searchInput && searchInput.toLowerCase())) && (
-              <div className={style.cardContainer}>
-                <div className={style.songSection}>
-                  <div className={style.trackName}>
-                    <div>Artist: {item.artist[0].name}</div>
-                    <div style={{ fontWeight: "400" }}>Song: {item.name}</div>
-                  </div>
-                  <Button onClick={() => addToPlaylist(index)}>
-                    Add to playlist
-                  </Button>
-                </div>
-              </div>
+              <Songs {...item} index={index} key={item.name} />
             )
         )}
       </div>

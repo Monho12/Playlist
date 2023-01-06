@@ -22,4 +22,15 @@ const getArtist = async (req, res) => {
   } catch (error) {}
 };
 
-module.exports = { createArtist, getArtists, getArtist };
+const addToArtist = async (req, res) => {
+  const artistId = req.params.id;
+  const urlId = req.body.image;
+  try {
+    const artist = await Artist.findById(artistId);
+    artist.image.push(urlId);
+    await artist.save();
+    res.send(artist);
+  } catch (error) {}
+};
+
+module.exports = { createArtist, getArtists, getArtist ,addToArtist };

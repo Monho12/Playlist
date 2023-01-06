@@ -2,7 +2,7 @@ import style from "../styles/Playlist.module.css";
 import { Link } from "react-router-dom";
 import trsh from "../assets/trsh.png";
 import axios from "axios";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { DataContext } from "../contexts/DataProvider";
 import { AuthContext } from "../contexts/AuthProvider";
 import playlist from "../assets/playlist.png";

@@ -1,6 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Sidebar, CreatePlaylist, Header } from "./components";
+import {
+  Sidebar,
+  CreatePlaylist,
+  Header,
+  ArtistPL,
+  ArtistSongs,
+} from "./components";
 import { DataProvider } from "./contexts/DataProvider";
 import { Home } from "./pages/Home";
 import { Explore } from "./pages/Explore";
@@ -24,6 +30,9 @@ function App() {
               <Header />
               <Routes>
                 <Route index element={<Home />} />
+                <Route path="/artist">
+                  <Route path=":id" element={<ArtistSongs />} />
+                </Route>
                 <Route path="/explore" element={<Explore />} />
                 <Route path="/library" element={<Library />} />
                 <Route path="/about" element={<About />} />

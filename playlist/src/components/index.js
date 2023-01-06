@@ -6,3 +6,6 @@ export * from "./Tracks";
 export * from "../pages/Login";
 export * from "../pages/Signup";
 export * from "./Profile";
+export * from "./Songs";
+export * from "./ArtistPL";
+export * from "./ArtistSongs";

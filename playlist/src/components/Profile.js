@@ -1,7 +1,6 @@
 import { useContext, useRef } from "react";
 import style from "../styles/Profile.module.css";
 import { Button } from "react-bootstrap";
-import axios from "axios";
 import { AuthContext } from "../contexts/AuthProvider";
 
 export const Profile = () => {

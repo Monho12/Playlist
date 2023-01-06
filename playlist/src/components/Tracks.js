@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import style from "../styles/Tracks.module.css";
 import axios from "axios";
+import { Songs } from "./Songs";
 export const Tracks = () => {
   const { id } = useParams("");
   const [songs, setSongs] = useState([]);
@@ -16,14 +16,11 @@ export const Tracks = () => {
   return (
     <>
       <h1>Songs</h1>
-      {songs.map((thing, index) => {
+      {songs.map((thing) => {
         return thing.map((item, index) => {
           return (
-            <div className={style.cardContainer}>
-              <div className={style.trackName}>
-                <div>Artist: {item.artist[0].name} </div>
-                <div style={{ fontWeight: "400" }}>Song: {item.name}</div>
-              </div>
+            <div>
+              <Songs {...item} index={index} />
             </div>
           );
         });

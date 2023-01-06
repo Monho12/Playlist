@@ -7,7 +7,7 @@ router
   .get("/artists", artistController.getArtists)
   .get("/artist/:id", artistController.getArtist)
   .post("/artists", artistController.createArtist)
-  .put("/artist/:id", () => {})
+  .put("/artist/:id", artistController.addToArtist)
   .delete("/artist/id", () => {});
 
 module.exports.artistRoutes = router;

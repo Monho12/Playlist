@@ -12,8 +12,7 @@ export const Header = () => {
         <div className={style.news}>
           <div className={style.inner}>
             <div className={style.marqueeStyle}>
-              Thanks for listening notSpotify®. Only available Drake and Joji's
-              songs.
+              Thanks for listening notSpotify®. Only available few songs.
             </div>
           </div>
         </div>

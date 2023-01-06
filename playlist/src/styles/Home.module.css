@@ -1,10 +1,10 @@
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 50px;
+  height: 75vh;
 }
 
-.innerContainer {
-  padding: 50px;
-  position: relative;
+.playlistSection {
+  padding: 20px;
+  height: 85vh;
+  overflow-y: scroll;
 }
