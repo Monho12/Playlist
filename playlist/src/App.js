@@ -1,10 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Sidebar, CreatePlaylist, Header, ArtistSongs } from "./components";
+import { Sidebar, CreatePlaylist, ArtistSongs } from "./components";
 import { DataProvider } from "./contexts/DataProvider";
 import { Home } from "./pages/Home";
 import { Explore } from "./pages/Explore";
-
 import { About } from "./pages/About";
 import { Library } from "./pages/Library";
 import { Tracks } from "./components/Tracks";
@@ -19,9 +18,8 @@ function App() {
       <AuthProvider>
         <DataProvider>
           <div className="App">
-            <Sidebar />
             <div className="Container">
-              <Header />
+              <Sidebar />
               <Routes>
                 <Route index element={<Home />} />
                 <Route path="/artist">

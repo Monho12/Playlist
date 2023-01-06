@@ -11,7 +11,7 @@ export const AuthProvider = (props) => {
 
   const login = (username, password) => {
     axios
-      .post("http://localhost:5000" + "/login", {
+      .post("https://server-zhnx.onrender.com/login", {
         username: username,
         password: password,
       })
@@ -24,7 +24,7 @@ export const AuthProvider = (props) => {
 
   const signup = (username, password) => {
     axios
-      .post("http://localhost:5000" + "/signup", {
+      .post("https://server-zhnx.onrender.com/signup", {
         username: username,
         password: password,
       })

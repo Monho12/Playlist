@@ -9,7 +9,7 @@ export const Tracks = () => {
   useEffect(() => {
     (async () => {
       const res = await axios.get(
-        "http://localhost:5000/playlists/" + id
+        "https://server-zhnx.onrender.com/playlists/" + id
       );
       setSongs([res.data.songs]);
     })();

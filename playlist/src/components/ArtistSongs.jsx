@@ -12,7 +12,7 @@ export const ArtistSongs = () => {
   const { artist } = useContext(DataContext);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/songs").then((res) => {
+    axios.get("https://server-zhnx.onrender.com/songs").then((res) => {
       console.log(res.data);
       setSongs(res.data);
     });

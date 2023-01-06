@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  height: 93vh;
+  height: 80vh;
   overflow-y: scroll;
   flex-direction: column;
 }

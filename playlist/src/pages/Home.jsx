@@ -1,7 +1,6 @@
 import style from "../styles/Home.module.css";
 import { useContext } from "react";
 import { ArtistPL } from "../components";
-import { Row } from "react-bootstrap";
 import { DataContext } from "../contexts/DataProvider";
 
 export const Home = () => {

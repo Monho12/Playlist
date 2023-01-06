@@ -1,5 +1,4 @@
 export * from "./Sidebar";
-export * from "./Header";
 export * from "./CreatePlaylist";
 export * from "./Playlist";
 export * from "./Tracks";

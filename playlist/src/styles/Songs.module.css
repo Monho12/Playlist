@@ -5,9 +5,9 @@
 
 .songSection {
   display: flex;
-  gap: 20px;
+  justify-content: space-between;
   align-items: center;
-  font-weight: 300;
+  width: 310px;
 }
 
 .trackName {

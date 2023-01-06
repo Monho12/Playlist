@@ -24,7 +24,7 @@ export const AddToPlaylist = (index) => {
 
   const push = () => {
     axios
-      .put("http://localhost:5000/playlists/" + playlistId, {
+      .put("https://server-zhnx.onrender.com/playlists/" + playlistId, {
         id: songId,
       })
       .then((res) => {

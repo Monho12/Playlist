@@ -1,6 +1,7 @@
 .container {
   padding: 50px;
-  height: 75vh;
+  height: 85vh;
+  overflow-y: scroll;
 }
 .container2 {
   display: flex;

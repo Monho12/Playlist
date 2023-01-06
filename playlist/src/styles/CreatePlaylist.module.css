@@ -63,3 +63,12 @@
   cursor: pointer;
   color: white;
 }
+
+@media only screen and (max-width: 992px) {
+  .container {
+    flex-direction: column;
+    width: 400px;
+    position: absolute;
+    left: 0;
+  }
+}

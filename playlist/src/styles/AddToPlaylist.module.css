@@ -69,3 +69,12 @@
   gap: 15px;
   color: white;
 }
+
+@media only screen and (max-width: 992px) {
+  .container {
+    flex-direction: column;
+    width: 330px;
+    height: 40vh;
+    left: 30px;
+  }
+}

@@ -6,29 +6,12 @@
 }
 
 .sections {
+  margin-left: 25px;
   display: flex;
   flex-direction: column;
   width: fit-content;
   gap: 3vh;
-  padding: 25px;
-}
-
-.line {
-  width: 80%;
-  margin: 15px 10px 0 20px;
-  border: 1px solid grey;
-}
-
-.playlistSection {
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
-  gap: 3vh;
-  padding: 25px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 200px;
+  padding: 15px;
 }
 
 .innerSection {
@@ -37,7 +20,13 @@
   align-items: center;
 }
 
-.img {
-  width: 16px;
-  height: 16px;
+.profile {
+  display: flex;
+  border: 1px solid;
+  border-radius: 50px;
+  margin: 0 20px 0 20px;
+  font-size: 18px;
+  padding: 5px;
+  background-color: black;
+  gap: 5px;
 }

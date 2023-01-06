@@ -14,11 +14,11 @@ export const Playlist = ({ index, _id, title, description }) => {
   const { user } = useContext(AuthContext);
   const deletePlaylist = () => {
     axios
-      .delete("http://localhost:5000" + `/playlists/${_id}`)
+      .delete("https://server-zhnx.onrender.com" + `/playlists/${_id}`)
       .then(() => {
         console.log("Deleted");
         axios
-          .get("http://localhost:5000" + "/playlists")
+          .get("https://server-zhnx.onrender.com" + "/playlists")
           .then((res) => {
             setList(res.data);
           });
