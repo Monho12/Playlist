@@ -12,7 +12,8 @@ export const Header = () => {
         <div className={style.news}>
           <div className={style.inner}>
             <div className={style.marqueeStyle}>
-              Thanks for listening notSpotify®. Only available few songs.
+              Thanks for listening notSpotify®. Only available admin's favorite
+              songs.
             </div>
           </div>
         </div>
