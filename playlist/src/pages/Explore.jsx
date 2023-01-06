@@ -10,7 +10,7 @@ export const Explore = () => {
   const { searchInput, setSearchInput, pro } = useContext(DataContext);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/songs").then((res) => {
+    axios.get("https://notspotify.onrender.com/songs").then((res) => {
       console.log(res.data);
       setSongs(res.data);
     });

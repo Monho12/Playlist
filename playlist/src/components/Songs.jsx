@@ -19,6 +19,7 @@ export const Songs = ({ artist, name, index, url, item }) => {
       music.pause();
     }
   };
+
   return (
     <div className={style.cardContainer}>
       <div className={style.songSection}>

@@ -1,12 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import {
-  Sidebar,
-  CreatePlaylist,
-  Header,
-  ArtistPL,
-  ArtistSongs,
-} from "./components";
+import { Sidebar, CreatePlaylist, Header, ArtistSongs } from "./components";
 import { DataProvider } from "./contexts/DataProvider";
 import { Home } from "./pages/Home";
 import { Explore } from "./pages/Explore";

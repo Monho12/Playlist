@@ -1,6 +1,5 @@
 import { createContext, useState } from "react";
 import axios from "axios";
-import { Login, Signup } from "../components";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -12,7 +11,7 @@ export const AuthProvider = (props) => {
 
   const login = (username, password) => {
     axios
-      .post("http://localhost:5000" + "/login", {
+      .post("https://notspotify.onrender.com" + "/login", {
         username: username,
         password: password,
       })
@@ -25,7 +24,7 @@ export const AuthProvider = (props) => {
 
   const signup = (username, password) => {
     axios
-      .post("http://localhost:5000" + "/signup", {
+      .post("https://notspotify.onrender.com" + "/signup", {
         username: username,
         password: password,
       })

@@ -2,10 +2,8 @@ import { DataContext } from "../contexts/DataProvider";
 import { useContext } from "react";
 import style from "../styles/Library.module.css";
 import { Playlist } from "../components/Playlist";
-import { Link } from "react-router-dom";
-import { Button, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import { AuthContext } from "../contexts/AuthProvider";
-import axios from "axios";
 
 export const Library = () => {
   const { list } = useContext(DataContext);

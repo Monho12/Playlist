@@ -8,7 +8,7 @@ export const Tracks = () => {
 
   useEffect(() => {
     (async () => {
-      const res = await axios.get("http://localhost:5000/playlists/" + id);
+      const res = await axios.get("https://notspotify.onrender.com/playlists/" + id);
       setSongs([res.data.songs]);
     })();
   }, [songs]);

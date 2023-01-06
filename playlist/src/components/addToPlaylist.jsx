@@ -6,19 +6,10 @@ import close from "../assets/close.png";
 import axios from "axios";
 
 export const AddToPlaylist = (index) => {
-  const {
-    add,
-    setAdd,
-    list,
-    playlistId,
-    setPlaylistId,
-    songId,
-
-    setAdded,
-  } = useContext(DataContext);
+  const { add, setAdd, list, playlistId, setPlaylistId, songId } =
+    useContext(DataContext);
   const { user } = useContext(AuthContext);
   const [check, setCheck] = useState(true);
-  const [preId, setPreId] = useState([]);
 
   const Check = (index) => {
     if (check) {
@@ -33,7 +24,9 @@ export const AddToPlaylist = (index) => {
 
   const push = () => {
     axios
-      .put("http://localhost:5000/playlists/" + playlistId, { id: songId })
+      .put("https://notspotify.onrender.com/playlists/" + playlistId, {
+        id: songId,
+      })
       .then((res) => {
         console.log(res.data._id);
       });
