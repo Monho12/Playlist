@@ -13,7 +13,7 @@ export const ArtistPL = ({ _id, name, image }) => {
             <img src={play} className={style.play} />
           </div>
           <div className={style.albumName}>
-            <div>This is {name}</div>
+            <div>{name}</div>
           </div>
         </div>
       </Link>

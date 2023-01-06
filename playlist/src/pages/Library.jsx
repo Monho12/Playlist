@@ -2,7 +2,6 @@ import { DataContext } from "../contexts/DataProvider";
 import { useContext } from "react";
 import style from "../styles/Library.module.css";
 import { Playlist } from "../components/Playlist";
-import { Row } from "react-bootstrap";
 import { AuthContext } from "../contexts/AuthProvider";
 
 export const Library = () => {
@@ -20,7 +19,6 @@ export const Library = () => {
         )}
       </div>
       <div className={style.container2}>
-        {/* <Row className="mx-2 row row-cols-6"> */}
         {list.map((item, index) => {
           return (
             <div key={index}>
@@ -38,7 +36,6 @@ export const Library = () => {
             </div>
           );
         })}
-        {/* </Row> */}
       </div>
     </div>
   );

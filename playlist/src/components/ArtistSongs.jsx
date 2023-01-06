@@ -33,15 +33,17 @@ export const ArtistSongs = () => {
           );
         }
       })}
-      {/* {songs.map((item, index) => {
-        if (id === item.artist[0]._id) {
-          return (
-            <div key={index}>
-              <Songs {...item} index={index} />
-            </div>
-          );
-        }
-      })} */}
+      <div className={style.songs}>
+        {songs.map((item, index) => {
+          if (item.artist.length > 0 && id === item.artist[0]._id) {
+            return (
+              <div key={index}>
+                <Songs {...item} index={index} />
+              </div>
+            );
+          }
+        })}
+      </div>
     </div>
   );
 };

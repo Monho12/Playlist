@@ -19,23 +19,32 @@ export const Explore = () => {
           onChange={(e) => setSearchInput(e.target.value)}
         />
       </div>
-      <div className={style.songSecion}>
-        {artist.map((item, index) => {
-          return (
-            searchInput &&
-            item.name &&
-            item.name
-              .toLowerCase()
-              .includes(searchInput && searchInput.toLowerCase()) && (
-              <ArtistPL {...item} key={index} />
-            )
-          );
-        })}
+      <div className={style.songSection}>
+        <div className={style.card}>
+          {artist.map((item, index) => {
+            return (
+              searchInput &&
+              item.name &&
+              item.name
+                .toLowerCase()
+                .includes(searchInput && searchInput.toLowerCase()) && (
+                <ArtistPL {...item} key={index} />
+              )
+            );
+          })}
+        </div>
         {songs.map((item, index) => {
           return (
-            <div>
+            ((item.name &&
+              item.name
+                .toLowerCase()
+                .includes(searchInput && searchInput.toLowerCase())) ||
+              (item.artist.length > 0 &&
+                item.artist[0].name
+                  .toLowerCase()
+                  .includes(searchInput && searchInput.toLowerCase()))) && (
               <Songs key={index} {...item} />
-            </div>
+            )
           );
         })}
       </div>

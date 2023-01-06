@@ -9,13 +9,11 @@ export const Songs = ({ artist, name, index }) => {
   const { addToPlaylist } = useContext(DataContext);
   const { user } = useContext(AuthContext);
 
-  console.log(artist[0].name, name);
-
   return (
     <div className={style.cardContainer}>
       <div className={style.songSection}>
         <div className={style.trackName}>
-          <div>Artist: {artist[0].name}</div>
+          <div>Artist: {artist.length > 0 && artist[0].name}</div>
           <div style={{ fontWeight: "400" }}>Song: {name && name}</div>
         </div>
         {user && (
