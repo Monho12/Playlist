@@ -8,7 +8,9 @@ export const Explain = () => {
   return (
     <div className={style.container}>
       <div className={style.innerContainer}>
-        Hello {user && user.username}, welcome to notSpotify.
+        {user && (
+          <div>Hello {user && user.username}, welcome to notSpotify.</div>
+        )}
         <div className={style.text}>
           This is "notSpotify". It means we cant play songs . Our web app is
           just create playlist and add some songs to your playlist. And we dont

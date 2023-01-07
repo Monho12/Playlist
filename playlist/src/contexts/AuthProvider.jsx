@@ -37,6 +37,7 @@ export const AuthProvider = (props) => {
 
   const logout = () => {
     setUser(null);
+    navigate("/login");
     window.localStorage.removeItem("credentials");
   };
 

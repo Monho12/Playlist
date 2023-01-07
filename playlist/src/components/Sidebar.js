@@ -96,6 +96,26 @@ export const Sidebar = () => {
             right: "0",
           }}
         >
+          {!user && (
+            <>
+              <Link to="/signup">
+                <button
+                  className={style.button}
+                  style={{ backgroundColor: "#D9D9D9", color: "black" }}
+                >
+                  Sign up
+                </button>
+              </Link>
+              <Link to="/login">
+                <button
+                  className={style.button}
+                  style={{ backgroundColor: "#6D6D9E", color: "white" }}
+                >
+                  Log in
+                </button>
+              </Link>
+            </>
+          )}
           {user && (
             <div className={style.profile}>
               <img src={pfp} style={{ height: "30px", width: "30px" }} />

@@ -27,3 +27,19 @@
   background-color: black;
   gap: 5px;
 }
+
+.button {
+  margin-right: 10px;
+  margin-right: 5px;
+  border-radius: 40px;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: #171717;
+  width: 100px;
+  height: 30px;
+}
