@@ -28,6 +28,11 @@
   gap: 5px;
 }
 
+.btns {
+  display: flex;
+  align-items: center;
+}
+
 .button {
   margin-right: 10px;
   margin-right: 5px;
@@ -43,3 +48,11 @@
   width: 100px;
   height: 30px;
 }
+
+@media only screen and (max-width: 992px) {
+  .button {
+    margin-left: 25px;
+    width: 150px;
+  }
+}
+

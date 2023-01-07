@@ -97,7 +97,7 @@ export const Sidebar = () => {
           }}
         >
           {!user && (
-            <>
+            <div className={style.btns}>
               <Link to="/signup">
                 <button
                   className={style.button}
@@ -114,7 +114,7 @@ export const Sidebar = () => {
                   Log in
                 </button>
               </Link>
-            </>
+            </div>
           )}
           {user && (
             <div className={style.profile}>
