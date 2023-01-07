@@ -9,7 +9,7 @@
   top: 30%;
   left: 40%;
   padding: 20px;
-  gap: 25px;
+  gap: 10px;
   border-radius: 15px;
 }
 
@@ -74,7 +74,7 @@
   .container {
     flex-direction: column;
     width: 330px;
-    height: 40vh;
+    height: 35vh;
     left: 30px;
   }
 }

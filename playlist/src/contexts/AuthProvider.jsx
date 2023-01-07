@@ -11,27 +11,27 @@ export const AuthProvider = (props) => {
 
   const login = (username, password) => {
     axios
-      .post("https://server-zhnx.onrender.com/login", {
+      .post("http://localhost:5000/login", {
         username: username,
         password: password,
       })
       .then((res) => {
         setUser(res.data);
         window.localStorage.setItem("credentials", JSON.stringify(res.data));
-        navigate(`/profile/${user && user._id}`);
+        navigate(`/`);
       });
   };
 
   const signup = (username, password) => {
     axios
-      .post("https://server-zhnx.onrender.com/signup", {
+      .post("http://localhost:5000/signup", {
         username: username,
         password: password,
       })
       .then((res) => {
         setUser(res.data);
         window.localStorage.setItem("credentials", JSON.stringify(res.data));
-        navigate(`/profile/${user && user._id}`);
+        navigate(`/`);
       });
   };
 

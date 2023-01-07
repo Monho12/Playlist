@@ -2,6 +2,13 @@
   padding: 10px;
 }
 
+.songSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 30px 0 0;
+}
+
 .trackName {
   display: flex;
   flex-direction: column;

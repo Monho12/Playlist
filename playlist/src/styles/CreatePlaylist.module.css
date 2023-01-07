@@ -67,8 +67,11 @@
 @media only screen and (max-width: 992px) {
   .container {
     flex-direction: column;
-    width: 400px;
+    width: 350px;
     position: absolute;
-    left: 0;
+    left: 10px;
+  }
+  .input {
+    width: 270px;
   }
 }

@@ -1,0 +1,15 @@
+.container {
+  padding-top: 10px;
+}
+
+.innerContainer {
+  padding: 10px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.text {
+  font-size: 18px;
+  text-align: center;
+  margin: 5vh 0 5vh 0;
+}

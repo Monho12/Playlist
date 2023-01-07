@@ -19,7 +19,7 @@ export const Signup = () => {
           <input
             type="text"
             class="form-control"
-            placeholder="enter your email"
+            placeholder="create your new username"
             aria-label="Default"
             onChange={(e) => setUsername(e.target.value)}
             aria-describedby="inputGroup-sizing-default"
@@ -29,9 +29,9 @@ export const Signup = () => {
         <div class="input-group mb-3">
           <div class="input-group-prepend"></div>
           <input
-            type="text"
+            type="password"
             class="form-control"
-            placeholder="enter your password"
+            placeholder="create your new password"
             onChange={(e) => setPassword(e.target.value)}
             aria-label="Default"
             aria-describedby="inputGroup-sizing-default"
@@ -39,7 +39,7 @@ export const Signup = () => {
         </div>
         <Button onClick={() => signup(username, password)}>Sign Up</Button>
         <div>
-          Already have account? <Link to="/login">Log in</Link>
+          Already have an account? <Link to="/login">Log in</Link>
         </div>
       </div>
     </div>

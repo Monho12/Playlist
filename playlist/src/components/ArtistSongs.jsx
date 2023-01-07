@@ -7,16 +7,8 @@ import { Songs } from "./Songs";
 import style from "../styles/ArtistSongs.module.css";
 
 export const ArtistSongs = () => {
-  const [songs, setSongs] = useState([]);
   const { id } = useParams();
-  const { artist } = useContext(DataContext);
-
-  useEffect(() => {
-    axios.get("https://server-zhnx.onrender.com/songs").then((res) => {
-      console.log(res.data);
-      setSongs(res.data);
-    });
-  }, []);
+  const { artist, songs } = useContext(DataContext);
 
   return (
     <div className={style.container}>

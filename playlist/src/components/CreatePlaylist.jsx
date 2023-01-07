@@ -4,10 +4,13 @@ import style from "../styles/CreatePlaylist.module.css";
 import axios from "axios";
 import close from "../assets/close.png";
 import { AuthContext } from "../contexts/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 export const CreatePlaylist = () => {
   const { create, setCreate, setList, list } = useContext(DataContext);
   const { user } = useContext(AuthContext);
+
+  const nav = useNavigate();
 
   let name = useRef();
   let descref = useRef();
@@ -17,7 +20,7 @@ export const CreatePlaylist = () => {
     console.log(name.current.value);
     setCreate(!create);
     axios
-      .post("https://server-zhnx.onrender.com/playlists", {
+      .post("http://localhost:5000/playlists", {
         title: title,
         description: descref.current.value,
         Creator: user._id,
@@ -29,6 +32,7 @@ export const CreatePlaylist = () => {
       .catch((err) => {
         console.log(err);
       });
+    nav("/library");
   };
 
   return (

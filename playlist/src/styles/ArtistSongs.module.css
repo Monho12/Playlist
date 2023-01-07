@@ -3,6 +3,7 @@
   margin: 30px;
   overflow-y: scroll;
   height: 80vh;
+  top: 15vh;
 }
 
 .text {
@@ -11,4 +12,10 @@
   font-size: 58px;
   color: darkorchid;
   padding: 20px;
+}
+
+@media only screen and (max-width: 992px) {
+  .container {
+    height: 75vh;
+  }
 }

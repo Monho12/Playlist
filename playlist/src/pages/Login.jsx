@@ -31,7 +31,7 @@ export const Login = () => {
         <div className="input-group mb-3">
           <div className="input-group-prepend"></div>
           <input
-            type="text"
+            type="password"
             className="form-control"
             placeholder="enter your password"
             value={password}

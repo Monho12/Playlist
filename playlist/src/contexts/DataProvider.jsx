@@ -13,21 +13,22 @@ export const DataProvider = (props) => {
   const [songId, setSongId] = useState("");
   const [artist, setArtist] = useState([]);
   const [songs, setSongs] = useState([]);
+  const [click, setClick] = useState(false);
 
   useEffect(() => {
     (async () => {
-      const res = await axios.get("https://server-zhnx.onrender.com/playlists");
+      const res = await axios.get("http://localhost:5000/playlists");
       console.log(res.data);
       setList(res.data);
     })();
 
     (async () => {
-      const res = await axios.get("https://server-zhnx.onrender.com/artists");
+      const res = await axios.get("http://localhost:5000/artists");
       console.log(res.data);
       setArtist(res.data);
     })();
 
-    axios.get("https://server-zhnx.onrender.com/songs").then((res) => {
+    axios.get("http://localhost:5000/songs").then((res) => {
       console.log(res.data);
       setSongs(res.data);
     });
@@ -35,8 +36,8 @@ export const DataProvider = (props) => {
 
   const addToPlaylist = (index) => {
     setAdd(!add);
-    axios.get("https://server-zhnx.onrender.com/songs").then((res) => {
-      console.log(res.data[index]._id);
+    axios.get("http://localhost:5000/songs").then((res) => {
+      console.log(res.data[index].name);
       setSongId(res.data[index]._id);
     });
   };
@@ -60,6 +61,8 @@ export const DataProvider = (props) => {
         songId,
         artist,
         songs,
+        click,
+        setClick,
       }}
     >
       {props.children}

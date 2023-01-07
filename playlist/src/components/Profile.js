@@ -16,7 +16,8 @@ export const Profile = () => {
         {user && (
           <div>
             <h2>Username: {user && user.username}</h2>
-            <h2>Id: {user && user._id}</h2>
+            <h2>Password: {user && user.password}</h2>
+            {/* <h2>Id: {user && user._id}</h2> */}
             <Button onClick={logout}>Log Out</Button>
           </div>
         )}

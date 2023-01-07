@@ -12,21 +12,21 @@ import play from "../assets/Play.png";
 export const Playlist = ({ index, _id, title, description }) => {
   const { list, setList } = useContext(DataContext);
   const { user } = useContext(AuthContext);
+
   const deletePlaylist = () => {
     axios
-      .delete("https://server-zhnx.onrender.com" + `/playlists/${_id}`)
+      .delete("http://localhost:5000" + `/playlists/${_id}`)
       .then(() => {
         console.log("Deleted");
-        axios
-          .get("https://server-zhnx.onrender.com" + "/playlists")
-          .then((res) => {
-            setList(res.data);
-          });
+        axios.get("http://localhost:5000/playlists").then((res) => {
+          setList(res.data);
+        });
       })
       .catch((err) => {
         console.log(err);
       });
   };
+
   if (list[index].Creator == user._id) {
     return (
       <div className={style.container}>

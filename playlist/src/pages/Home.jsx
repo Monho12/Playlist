@@ -1,6 +1,6 @@
 import style from "../styles/Home.module.css";
 import { useContext } from "react";
-import { ArtistPL } from "../components";
+import { ArtistPL, Explain } from "../components";
 import { DataContext } from "../contexts/DataProvider";
 
 export const Home = () => {
@@ -9,6 +9,7 @@ export const Home = () => {
   return (
     <div className={style.container}>
       <div className={style.playlistSection}>
+        <Explain />
         <h1>Trending Artists</h1>
         <div className={style.container2}>
           {artist.map((item, index) => {

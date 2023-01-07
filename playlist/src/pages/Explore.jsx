@@ -1,6 +1,5 @@
 import style from "../styles/Explore.module.css";
-import { useState, useEffect, useContext } from "react";
-import axios from "axios";
+import { useContext } from "react";
 import { AddToPlaylist } from "../components/addToPlaylist";
 import { ArtistPL, Songs } from "../components";
 import { DataContext } from "../contexts/DataProvider";
@@ -19,6 +18,11 @@ export const Explore = () => {
           onChange={(e) => setSearchInput(e.target.value)}
         />
       </div>
+      {searchInput === "amar" && (
+        <div className={style.amar}>
+          <div>GAY</div>
+        </div>
+      )}
       <div className={style.songSection}>
         <div className={style.card}>
           {artist.map((item, index) => {
@@ -43,7 +47,9 @@ export const Explore = () => {
                 item.artist[0].name
                   .toLowerCase()
                   .includes(searchInput && searchInput.toLowerCase()))) && (
-              <Songs key={index} {...item} />
+              <div key={index}>
+                <Songs {...item} index={index} />
+              </div>
             )
           );
         })}

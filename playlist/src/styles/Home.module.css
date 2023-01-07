@@ -1,6 +1,6 @@
 .container {
-  padding: 50px;
-  height: 85vh;
+  padding-top: 15vh;
+  height: 95vh;
   overflow-y: scroll;
 }
 .container2 {
@@ -11,7 +11,7 @@
 }
 
 .playlistSection {
-  padding: 20px;
+  padding: 50px;
   height: 85vh;
   overflow-y: scroll;
 }

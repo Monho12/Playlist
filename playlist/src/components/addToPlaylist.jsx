@@ -4,12 +4,14 @@ import { DataContext } from "../contexts/DataProvider";
 import style from "../styles/AddToPlaylist.module.css";
 import close from "../assets/close.png";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export const AddToPlaylist = (index) => {
   const { add, setAdd, list, playlistId, setPlaylistId, songId } =
     useContext(DataContext);
   const { user } = useContext(AuthContext);
   const [check, setCheck] = useState(true);
+  const nav = useNavigate();
 
   const Check = (index) => {
     if (check) {
@@ -24,14 +26,15 @@ export const AddToPlaylist = (index) => {
 
   const push = () => {
     axios
-      .put("https://server-zhnx.onrender.com/playlists/" + playlistId, {
+      .put("http://localhost:5000/playlists/" + playlistId, {
         id: songId,
       })
       .then((res) => {
-        console.log(res.data._id);
+        console.log(res.data._id, songId);
       });
     setAdd(false);
     alert("added to your playlist");
+    nav("/library");
   };
 
   return (

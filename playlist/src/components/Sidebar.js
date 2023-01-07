@@ -2,13 +2,12 @@ import style from "../styles/Sidebar.module.css";
 import Logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 import { DataContext } from "../contexts/DataProvider";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import add from "../assets/Add.png";
 import lib from "../assets/Library.png";
 import exp from "../assets/explore.png";
 import hom from "../assets/Home.png";
 import log from "../assets/Spotify.png";
-import profile from "../assets/user.png";
 import pfp from "../assets/pfp.png";
 import { AuthContext } from "../contexts/AuthProvider";
 import Nav from "react-bootstrap/Nav";
@@ -20,7 +19,15 @@ export const Sidebar = () => {
   const [toggle, setToggle] = useState(true);
 
   return (
-    <Navbar style={{ backgroundColor: "#202020" }} expand="lg">
+    <Navbar
+      style={{
+        backgroundColor: "#202020",
+        position: "fixed",
+        width: "100%",
+        zIndex: "999",
+      }}
+      expand="lg"
+    >
       <Link to="/">
         <div style={{ padding: "25px" }}>
           <img
@@ -31,11 +38,13 @@ export const Sidebar = () => {
           />
         </div>
       </Link>
+
       <Navbar.Toggle
         aria-controls="basic-navbar-nav"
         style={{ backgroundColor: "wheat", marginRight: "10px" }}
         onClick={() => setToggle(!toggle)}
       />
+
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className={style.sections}>
           <Link to="/" style={{ textDecoration: "none", color: "wheat" }}>
@@ -77,7 +86,7 @@ export const Sidebar = () => {
             </div>
           </Link>
         </Nav>
-       
+
         <Link
           to={`/profile/${user ? user._id : "id"}`}
           style={{
@@ -94,7 +103,6 @@ export const Sidebar = () => {
             </div>
           )}
         </Link>
-    
       </Navbar.Collapse>
     </Navbar>
   );
