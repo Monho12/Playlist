@@ -17,18 +17,18 @@ export const DataProvider = (props) => {
 
   useEffect(() => {
     (async () => {
-      const res = await axios.get("http://localhost:5000/playlists");
+      const res = await axios.get("https://server-6ch8.onrender.com/playlists");
       console.log(res.data);
       setList(res.data);
     })();
 
     (async () => {
-      const res = await axios.get("http://localhost:5000/artists");
+      const res = await axios.get("https://server-6ch8.onrender.com/artists");
       console.log(res.data);
       setArtist(res.data);
     })();
 
-    axios.get("http://localhost:5000/songs").then((res) => {
+    axios.get("https://server-6ch8.onrender.com/songs").then((res) => {
       console.log(res.data);
       setSongs(res.data);
     });
@@ -36,7 +36,7 @@ export const DataProvider = (props) => {
 
   const addToPlaylist = (index) => {
     setAdd(!add);
-    axios.get("http://localhost:5000/songs").then((res) => {
+    axios.get("https://server-6ch8.onrender.com/songs").then((res) => {
       console.log(res.data[index].name);
       setSongId(res.data[index]._id);
     });

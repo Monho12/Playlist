@@ -15,10 +15,10 @@ export const Playlist = ({ index, _id, title, description }) => {
 
   const deletePlaylist = () => {
     axios
-      .delete("http://localhost:5000" + `/playlists/${_id}`)
+      .delete("https://server-6ch8.onrender.com" + `/playlists/${_id}`)
       .then(() => {
         console.log("Deleted");
-        axios.get("http://localhost:5000/playlists").then((res) => {
+        axios.get("https://server-6ch8.onrender.com/playlists").then((res) => {
           setList(res.data);
         });
       })
