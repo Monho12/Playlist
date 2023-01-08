@@ -34,7 +34,6 @@ export const AddToPlaylist = (index) => {
       });
     setAdd(false);
     alert("added to your playlist");
-    nav("/library");
   };
 
   return (
